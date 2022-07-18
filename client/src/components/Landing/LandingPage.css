@@ -1,0 +1,64 @@
+
+.Landing{
+    background: url("https://thumbs.dreamstime.com/z/comida-que-cocina-el-fondo-los-ingredientes-para-platos-del-vegano-de-la-preparaci%C3%B3n-las-verduras-ra%C3%ADces-especias-setas-y-140717802.jpg"); 
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.Welcome{
+    font-family: 'Lucida Handwriting',sans-serif;
+    
+}
+.btn{
+    display: flex;
+    justify-content:center;
+    
+}
+
+.btnInicial{
+  font-family: 'Lucida Handwriting',sans-serif;
+  padding: 18px 30px;
+  font-size: 16px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+  overflow: hidden;
+  background:rgb(147, 179, 60);
+  border-radius: 0;
+  min-width: 200px;
+  color: #fff;
+  z-index:0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btnInicial::before {
+    content:"";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -50px;
+    width: 70%;
+    height: 100%;
+    background:
+    linear-gradient(90deg, transparent,#ffffff71, transparent);
+    transition: all 1s;
+    z-index: -1;
+    transform: translate(-120px) skew(-20deg);
+}
+    
+
+.btnInicial:hover::before{
+    transform: translate(300px) skew(-20deg);
+}
+
+.btnInicial:hover{
+    background: #2c4105;
+}
+
+
+    

@@ -1,0 +1,78 @@
+.Paginated{
+    display: flex;
+}
+.principalDiv{
+    background: url("https://st.depositphotos.com/2576363/4639/i/950/depositphotos_46392373-stock-photo-italian-food-background.jpg") no-repeat;
+    background-attachment: fixed;
+   background-position: center center;
+   background-size: cover;
+}
+.pages{
+    background-repeat: repeat;
+}
+.btnPage{
+  padding: 18px 30px;
+  font-size: 16px;
+  border: solid;
+  border-color: black;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+  overflow: hidden;
+  background:rgb(147, 179, 60);
+  border-radius: 0;
+  min-width: 115px;
+  color: #fff;
+  z-index:0;
+  letter-spacing: 2px;
+  font-weight: 300;
+  transition: 0.3s;
+}
+    
+.btnPage:hover{
+    background: #2c4105;
+}
+
+.createBtn{
+  padding: 18px 30px;
+  font-size: 16px;
+  border: solid;
+  border-color: black;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+  overflow: hidden;
+  background:rgb(147, 179, 60);
+  border-radius: 0;
+  min-width: 100px;
+  color: #fff;
+  z-index:0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.createBtn::before {
+    content:"";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -50px;
+    width: 70%;
+    height: 100%;
+    background:
+    linear-gradient(90deg, transparent,#ffee00dc, transparent);
+    transition: all 1s;
+    z-index: -1;
+    transform: translate(-120px) skew(-20deg);
+}
+.createBtn:hover::before{
+    transform: translate(300px) skew(-20deg);
+}
+
+.createBtn:hover{
+    background: rgb(0, 0, 0);
+}
+    
+    
+    
