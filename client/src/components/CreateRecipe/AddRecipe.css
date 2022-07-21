@@ -1,2 +1,9 @@
-
-
+.CreateDiv{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 500px;
+    align-items: center;
+    justify-content: center;
+}

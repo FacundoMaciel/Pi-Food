@@ -10,6 +10,7 @@ import { FilteredByDiets } from "../FiltersbyDiet/FilterbyDiets.jsx";
 import {OrderAlphabeticFunction} from "../AlphabeticalOrder/OrderAlphabetic";
 import {OrderByScore} from "../OrderScore/OrderByScore";
 import  Loading  from "../Loading/Loading.jsx"
+import Error404 from "../Error/Error404";
 import "./Home.css"
 
 
@@ -36,6 +37,7 @@ export default function MyHome(){
     },[dispatch]);
 
 
+
     return (
         <div className="principalDiv">
             <nav className="navOfWorks">
@@ -45,7 +47,7 @@ export default function MyHome(){
             </nav>
             <div >
                 <Link to="/myRecipe">
-                    <button className="createBtn"> create you recipe </button>
+                    <button className="createBtn"> Create your recipe </button>
                 </Link>
             </div>
             <div className="ORDER">
@@ -54,15 +56,21 @@ export default function MyHome(){
                 <div className="FilteredByDiets">
                     <FilteredByDiets />
                 </div>
-            <div>
+            <div className="Score">
                 <OrderByScore/>
             </div>
-            <div>
-                {recipesPages ? recipesPages.map(element => { // the recipes es el estado global de donde saco la info
-                    return <Recipe name={element.name} key={element.id}
-                        image={element.image} dietTypes={element.dietTypes} id={element.id}
+            <div className="CardsRecipes">
+                { !theRecipes.length ? <Error404/> : null}
+                {theRecipes.length ? recipesPages?.map(element => { // the recipes es el estado global de donde saco la info
+                    return <Recipe 
+                    name={element.name} 
+                    key={element.id}
+                    image={element.image} 
+                    dietTypes={element.dietTypes} 
+                    id={element.id}
                     />
                 }) : <Loading/>}
+            </div>
                 <div className="Paginated">
                 <Paginated
                     theRecipes={theRecipes.length}
@@ -71,7 +79,6 @@ export default function MyHome(){
                     thePaging={thePaging}
                 />
                 </div>
-            </div>
         </div>
     );
 };

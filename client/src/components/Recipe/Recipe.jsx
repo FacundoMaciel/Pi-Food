@@ -12,19 +12,23 @@ export default function Recipe({ image, name, dietTypes,id }) {
         <div className="recipeCard">
             <div>
                 <h2>{name}</h2>
-            <Link to={`/home/${id}`} key={id}>
             <div>
                 <img className= "img" src={image} alt="Not found" />
             </div>
-            </Link>
             <div className="typesDiet"> Diet Types:
             
             {dietTypes?.map(el => 
             <li className="diets" key={dietsKey++}>
                 {el.name ? el.name : el}</li>)}
             </div>
+            <div>
+            <Link to={`/home/${id}`} key={id}>
+                <button className="Details"> More info </button>
+            </Link>
+            </div>
             </div>
         </div>
+
     );
 };
 

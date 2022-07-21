@@ -2,14 +2,41 @@
     font-family: 'Georgia',sans-serif;
     display: flex;
     flex-direction:row;
-    max-width: 300px;
-    min-width: 400px;
-    background-color: rgb(147, 179, 60);
+    max-width: 250px;
+    min-width: 360px;
+    background-color: rgb(170, 212, 106);
     border: 2px solid grey;
     border-radius: 10px;
     padding: 10px;
     margin: 30px;
+    justify-content: center;
+    color: beige;
 }
+    
+    
 .img{
     border-radius: 4%;
+}
+
+.Details{
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color: beige;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 9px #999;
+}
+
+.Details:hover {background-color:  rgb(48, 80, 0)}
+
+.Details:active {
+  background-color: #f8faf8;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

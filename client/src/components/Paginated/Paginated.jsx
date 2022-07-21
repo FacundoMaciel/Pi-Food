@@ -1,4 +1,5 @@
 import React from "react";
+import "./Paginated.css"
 
 export default function Paginated({theRecipes, recipesPerPage, thePaging}){
     
@@ -9,18 +10,21 @@ export default function Paginated({theRecipes, recipesPerPage, thePaging}){
         thePagings.push(i)
     };
     //console.log(thePagings)
+    const handleClick = (number)=>{
+        thePaging(number)
+    }
     return(
-       
+        
         <ul className="itemsPages">
             {thePagings && thePagings.map(number => (
                 <span className="pages" key={number}>
-                    <button className="btnPage" onClick={() => thePaging(number)}>{number}</button> </span>
+                    <button className="btnPage" onClick={() => handleClick(number)}>{number}</button> </span>
             ))}
         </ul>
     );
 };
+                    
 
-                
 
            
 

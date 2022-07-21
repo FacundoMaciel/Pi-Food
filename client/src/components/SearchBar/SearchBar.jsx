@@ -5,25 +5,35 @@ import { useDispatch } from "react-redux";
 import "./SearchBar.css"
 
 
-
 export function SearchBar () {
     const [input, setInput] = useState('');
+    
     const dispatch = useDispatch();
 
-    const onSubmit = (e)=>{
+    const onSubmit = (e) => {
         e.preventDefault();
-
-        if (input) dispatch(getRecipeByName(input))
-        else alert("No answers for you request")
+        
+        if(input === "") alert("Complete the field please")
+       
+        if(Number(input)) alert("No numbers in this field")
+        
+        dispatch(getRecipeByName(input))
+        
+        setInput("")
     };
+    
+         
 
     const onChange = (e)=>{
         setInput(e.target.value)
+        
+        
     };
 
     function handleClick(e){
         e.preventDefault();
-        dispatch(getRecipes())
+        dispatch(getRecipes(input))
+        setInput("")
     }
 
     return(
@@ -38,9 +48,10 @@ export function SearchBar () {
                 type="text" 
                 placeholder="Search recipe..."
                 value={input}
-                onChange={ e=> onChange(e)}
+                onChange={ e => onChange(e)}
                 />
                 <button className="Searcher" type="submit"> Search </button>
+                
             </form>
         </div>
     )

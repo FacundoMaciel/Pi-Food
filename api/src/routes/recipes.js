@@ -2,7 +2,8 @@ require('dotenv').config();
 const { Router } = require('express');
 const { API_KEY, API_KEY2, API_KEY3, API_KEY4, 
         API_KEY5, API_KEY6, API_KEY7, API_KEY8, 
-        API_KEY9, API_KEY10, API_KEY11, API_KEY12
+        API_KEY9, API_KEY10, API_KEY11, API_KEY12,
+        API_KEY13, API_KEY14, API_KEY15
       } = process.env
 const { Recipe, Diet } = require('../db.js')
 const axios = require ('axios')
@@ -12,7 +13,7 @@ const router = Router();
 //console.log('MI API KEY',API_KEY)
 
 const myApiData = async function () {
-    const myApi = await axios.get(`https://api.spoonacular.com//recipes/complexSearch?apiKey=${API_KEY11}&addRecipeInformation=true&number=100`)
+    const myApi = await axios.get(`https://api.spoonacular.com//recipes/complexSearch?apiKey=${API_KEY15}&addRecipeInformation=true&number=100`)
     .then(r => r.data.results)
     let resultsApi = myApi?.map(res => {
       return {
@@ -84,41 +85,31 @@ const myTotalData = async()=> {
   };
           
 router.get("/", async (req, res) => {
-    const {name} = req.query
-     let allRecipes = await myTotalData();
-     if (name) {
-        //console.log(allRecipes)
-        let nameRecipe = await allRecipes.filter( el => el.name.toLowerCase().includes(name.toLowerCase())); 
-        //console.log(nameRecipe)
-        if(nameRecipe.length) res.status(200).send(nameRecipe)
-        else if (!nameRecipe.length) res.status(404).send("Recipe not found")
-       //console.log(nameRecipe)
-       } else {
-         res.status(200).send(allRecipes);
-       }
+  const { name } = req.query
+  let allRecipes = await myTotalData();
+  if (name) {
+    let nameRecipe = await allRecipes.filter(el => el.name.toLowerCase().includes(name.toLowerCase()));
+    if (nameRecipe.length) res.status(200).send(nameRecipe)
+    else if (!nameRecipe.length) res.status(404).send("Recipe not found")
+  } else {
+    res.status(200).send(allRecipes);
+  }
 });
   
 router.get("/:id", async (req, res) => {
-
-    
-    const { id } = req.params
-    console.log(id)
-    try {
-        let allRecipes = await myTotalData();
-        if(id){
-            let idRecipe = await allRecipes.filter(el => el.id == id)
-            idRecipe.length?
-            res.status(200).send(idRecipe):
-            res.status(404).send("Recipe not found")
-          }
-        } catch (e) {
-          console.log(e)
-        }
+  const { id } = req.params
+  try {
+    let allRecipes = await myTotalData();
+    if (id) {
+      let idRecipe = await allRecipes.filter(el => el.id == id)
+      idRecipe.length ?
+        res.status(200).send(idRecipe) :
+        res.status(404).send("Recipe not found")
+    }
+  } catch (e) {
+    console.log(e)
+  }
 });
-  
- 
-  
 
-            
 
 module.exports = router;

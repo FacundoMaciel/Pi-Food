@@ -1,19 +1,19 @@
 .reload{
   display: inline-block;
   padding: 15px 25px;
-  font-size: 24px;
+  font-size: 15px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: black;
-  background-color: beige;
+  color: #fff;
+  background-color: rgb(170, 212, 106);
   border: none;
   border-radius: 50px;
   box-shadow: 0 9px #999;
 }
 
-.reload:hover {background-color: rgb(147, 179, 60)}
+.reload:hover {background-color:  rgb(48, 80, 0)}
 
 .reload:active {
   background-color: #f8faf8;
@@ -27,9 +27,9 @@
   border: 1px solid #d3d3d3;
 	left: 80%;
   padding: 2px 5px;
-  position:fixed;
+  position:absolute;
 	margin: -22px 0 0 -170px;
-	top: 10%;
+	top: 5%;
   width:355px;
   box-shadow:0 4px 9px rgba(0,0,0,.37);
   -moz-box-shadow:0 4px 9px rgba(0,0,0,.37);
@@ -72,13 +72,13 @@
   line-height: 15px
 }
 .form_cotainerBar button {
-	background: rgb(147, 179, 60);
-	background: -moz-linear-gradient(top,rgb(147, 179, 60) 0%, rgb(147, 179, 60) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(147, 179, 60)), color-stop(100%,rgba(38,145,220,1)));
-	background: -webkit-linear-gradient(top,rgb(147, 179, 60) 0%,rgb(147, 179, 60) 100%);
-	background: -o-linear-gradient(top, rgb(147, 179, 60) 0%,rgb(147, 179, 60) 100%);
-	background: -ms-linear-gradient(top, rgb(147, 179, 60) 0%,rgb(147, 179, 60) 100%);
-	background: linear-gradient(to bottom, rgb(147, 179, 60) 0%,rgb(147, 179, 60) 100%);
+	background:  rgb(170, 212, 106);
+	background: -moz-linear-gradient(top, rgb(170, 212, 106) 0%,  rgb(170, 212, 106) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(170, 212, 106)), color-stop(100%,rgba(38,145,220,1)));
+	background: -webkit-linear-gradient(top, rgb(170, 212, 106) 0%, rgb(170, 212, 106) 100%);
+	background: -o-linear-gradient(top, rgb(170, 212, 106) 0%, rgb(170, 212, 106) 100%);
+	background: -ms-linear-gradient(top,  rgb(170, 212, 106) 0%, rgb(170, 212, 106) 100%);
+	background: linear-gradient(to bottom,  rgb(170, 212, 106) 0%, rgb(170, 212, 106) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
 	border: none;
 	color:#fff;

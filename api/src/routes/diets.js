@@ -2,9 +2,7 @@ const { Router } = require('express');
 const { Diet } = require("../db.js");
 
 const router = Router();
-// require('dotenv').config();
-// const { API_KEY2 } = process.env
-// const axios = require('axios')
+
 
 const fromApiToDbDiets = [
 "gluten free",

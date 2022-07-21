@@ -14,6 +14,7 @@ function validate(input) {
     if (input.healthScore < 1 || input.healthScore > 100) {
         errors.healthScore = "Complete field width values 1 to 100 please"
     } else if ((!/^([0-9]|[1-9][0-9]|100)$/.test(input.healthScore))) { errors.healthScore = "Just numbers" }
+    
     return errors;
 };
 
@@ -23,6 +24,7 @@ function validate(input) {
 export default function AddRecipe() {
 
     const dispatch = useDispatch();
+    
     
 
     const typeOfDiet = useSelector(state => state.typeOfDiet);
@@ -53,8 +55,8 @@ export default function AddRecipe() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         dispatch(addRecipe(input));
-        console.log(input)
         alert("You recipe has been created congrats")
         setInput({
             name: "",
@@ -66,8 +68,8 @@ export default function AddRecipe() {
             dietTypes: [],
             image: "",
         });
-        
     };
+        
     
     function handleCheckBox(e){
         let newArray = input.dietTypes
@@ -91,6 +93,7 @@ export default function AddRecipe() {
     }, [dispatch])
 
     return (
+        <div className="CreateDiv">
         <form onSubmit={e => handleSubmit(e)}>
             <Link to="/home">
                 <button>
@@ -98,33 +101,24 @@ export default function AddRecipe() {
                 </button>
             </Link>
             <div>
-                {console.log(input)}
                 <input className="Name"
-                    placeholder="name"
                     type="text"
                     name="name"
                     onChange={e => handleOnChange(e)}
                     value={input.name} 
                     />
+                <label className="nameLabel"> Name </label>
                 {errors.name && (<p>{errors.name}</p>)}
 
             </div>
-            <div>
-                <input
-                    placeholder="dishType"
-                    type="text"
-                    name="dishType"
-                    onChange={e => handleOnChange(e)}
-                    value={input.dishType} 
-                    />
-            </div>
+            <label> Summary </label>
             <input
                 placeholder="Summary"
                 type="text"
                 name="summary"
                 onChange={handleOnChange}
                 value={input.summary} />
-
+            <label> Health Score </label>
             <input
                 type="text"
                 name="healthScore"
@@ -132,13 +126,14 @@ export default function AddRecipe() {
                 onChange={e => handleOnChange(e)}
                 value={input.healthScore} />
             {errors.healthScore && (<p>{errors.healthScore}</p>)}
-
+            <label> Steps </label>
             <input
                 placeholder="Steps"
                 type="text"
                 name="steps"
                 onChange={e => handleOnChange(e)}
                 value={input.steps} />
+            <label> Image </label>
             <input
                 type="text"
                 placeholder="Image"
@@ -152,7 +147,12 @@ export default function AddRecipe() {
                     return (
                         <div>
                             <label>{el}</label>
-                            <input type="checkbox" onChange={e => handleCheckBox(e)} selected={input.dietTypes.includes(el)} name={el} value={el} />
+                            <input type="checkbox" 
+                            onChange={e => handleCheckBox(e)} 
+                            selected={input.dietTypes.includes(el)} 
+                            name={el} 
+                            value={el} 
+                            />
 
                         </div>
                     )
@@ -161,7 +161,7 @@ export default function AddRecipe() {
 
             <button type="submit"> Create </button>
         </form>
-
+        </div>
     );
 };
 
