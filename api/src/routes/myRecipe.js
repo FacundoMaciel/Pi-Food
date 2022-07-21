@@ -4,7 +4,7 @@ const { Recipe, Diet } = require('../db.js')
 const router = Router();
 
 
-router.post("/", async (req, res) => {
+router.post("/", async (req, res, next) => {
     const {name,summary,steps,score,healthScore,dietTypes,image} = req.body
     try {
          let newRecipe = await Recipe.create({
@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
         newRecipe.addDiet(dbDiets)
         res.send(newRecipe);
     } catch (e) {
-        console.log(e)
+        next(e)
     }
 });
 

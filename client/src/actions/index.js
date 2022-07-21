@@ -9,7 +9,7 @@ export const ALPHABETIC_ORDER = "ALPHABETIC_ORDER"
 export const ORDER_HEALTH_SCORE = "ORDER_HEALTH_SCORE"
 export const ADD_RECIPE = "ADD_RECIPE"
 export const CLEAR_DETAILS = "CLEAR_DETAILS"
-
+export const FILTER_DB_API = "FILTER_DB_API"
 
 export const getRecipes = ()=> {
     return function(dispatch){
@@ -104,6 +104,14 @@ export function addRecipe (payload) {
 export function clearDetails(){
     return{
         type: CLEAR_DETAILS
+    }
+};
+
+export function filterDbApi(payload){
+console.log(payload)
+    return{
+        type: FILTER_DB_API,
+        payload,
     }
 }
         

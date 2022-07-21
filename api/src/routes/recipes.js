@@ -13,7 +13,7 @@ const router = Router();
 //console.log('MI API KEY',API_KEY)
 
 const myApiData = async function () {
-    const myApi = await axios.get(`https://api.spoonacular.com//recipes/complexSearch?apiKey=${API_KEY15}&addRecipeInformation=true&number=100`)
+    const myApi = await axios.get(`https://api.spoonacular.com//recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`)
     .then(r => r.data.results)
     let resultsApi = myApi?.map(res => {
       return {

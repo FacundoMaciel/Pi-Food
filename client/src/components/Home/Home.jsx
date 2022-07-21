@@ -11,6 +11,7 @@ import {OrderAlphabeticFunction} from "../AlphabeticalOrder/OrderAlphabetic";
 import {OrderByScore} from "../OrderScore/OrderByScore";
 import  Loading  from "../Loading/Loading.jsx"
 import Error404 from "../Error/Error404";
+import ApiOrdDb from "../FilteredByDbOrApi/ApiOrDb.jsx"
 import "./Home.css"
 
 
@@ -58,6 +59,9 @@ export default function MyHome(){
                 </div>
             <div className="Score">
                 <OrderByScore/>
+            </div>
+            <div className="ApiOdb">
+                <ApiOrdDb/>
             </div>
             <div className="CardsRecipes">
                 { !theRecipes.length ? <Error404/> : null}
