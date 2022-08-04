@@ -66,6 +66,7 @@ export default function MyHome(){
                         healthScore={element.healthScore}
                     />
                 }) : <Loading />}
+            <h1>Thank you for your visit to my app<span>Returns soon</span></h1>
             </div>
         </div>
     );
