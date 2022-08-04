@@ -1,10 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Akronim);
+
 .GeneralDiv{
-   background: url("https://th.bing.com/th/id/R.1ae8b48c62ce77f2d2696f3723b8e8f5?rik=YwjZr5yy2m7D9Q&riu=http%3a%2f%2fst.depositphotos.com%2f1494134%2f3131%2fv%2f950%2fdepositphotos_31314591-Cooking-background-food-ingredients-and-paper.jpg&ehk=uOWXDSxWPD2kpbgcObjruGSuuVVBo5NQuwEgxclFD%2bo%3d&risl=&pid=ImgRaw&r=0")no-repeat;
-   background-attachment:scroll;
-   background-position:center;
+   display: flex;
+   background: url("https://st2.depositphotos.com/2001403/9757/i/950/depositphotos_97579326-stock-photo-vintage-table-over-kitchen.jpg");
+   width: 100%;
+   height: 370%;
+   position: absolute;
    background-size: cover;
+   background-position:absolute;
+   flex-direction: column;
+   color: black;
+   font-size:larger;
+   /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+}
+   
+.RecipeDetails{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: center;
+   background-color: transparent;
+   padding: 20px;
+   margin: 50px;
    
 }
-  
-   
+.RecipeDetails img{
+   border-radius: 10px;
+   border: solid lightgray;
+}
+.RecipeDetails h2{
+   font-family: 'Akronim';
+}
+.RecipeDetails h1{
+   font-family: 'Akronim';
+}
+
+.backImg{
+   margin: 10px;
+   padding: 10px;
+   border-radius: 20px;
+   animation: float 4s linear infinite;
+}
+@keyframes float{
+   0%,
+   100% {
+      box-shadow: 0 5px 15px 0px rgba(255, 255, 255, 0.6);
+      transform: translateY(0px);
+   }
+   50%{
+      box-shadow: 0 25px 15px 0px rgba(255, 255, 255, 0.2);
+      transform: translateY(-10px);
+   }
+}
    

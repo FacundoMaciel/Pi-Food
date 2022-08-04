@@ -1,80 +1,170 @@
+@import url(https://fonts.googleapis.com/css?family=Akronim);
 
 .Landing{
-    background: url("https://thumbs.dreamstime.com/z/comida-que-cocina-el-fondo-los-ingredientes-para-platos-del-vegano-de-la-preparaci%C3%B3n-las-verduras-ra%C3%ADces-especias-setas-y-140717802.jpg"); 
-    width: 100vw;
-    height: 100vh;
+    background-image: url("https://st3.depositphotos.com/14238322/16554/i/1600/depositphotos_165548724-stock-photo-utensil-kitchen-wooden-and-stainless.jpg"); 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-attachment:fixed;
+    background-size: cover;
+
+}
+    
+.Welcome {
+    margin: 50px auto;
+    width: 80%;
+    max-width: 1000px;
+    height: 100px;
+    padding-top: 15px;
+    padding-left: 150px;
+    /* background-position: center center; */
+    background-size: 1000px 200px;
+    border-radius: 20px;
+    font-family: 'Akronim';
     overflow: hidden;
-    position: fixed;
+    /* text-align:start; */
+    vertical-align: middle;
 }
 
-.Welcome{
-    font-family: 'Lucida Handwriting',sans-serif;
+
+.Welcome:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.text {
+    display: inline-block;
+    margin: 0;
+    color: rgb(255, 115, 0);
+    font-size: 100px;
+    line-height: 50px;
+    min-width: 50px;
+    outline: none;
+    vertical-align: middle;
+
+    text-shadow:
+        0 3px 20px red,
+        0 0 20px red,
+        0 0 10px orange,
+        4px -5px 6px yellow,
+        -4px -10px 10px yellow,
+        0 -10px 30px yellow;
+    animation: 2s Blazing infinite alternate linear;
+}
+
+@keyframes Blazing {
+    0% {
+        text-shadow: 0 3px 20px red, 0 0 20px red,
+            0 0 10px orange,
+            0 0 0 yellow,
+            0 0 5px yellow,
+            -2px -5px 5px yellow,
+            4px -10px 10px yellow;
+    }
+
+    25% {
+        text-shadow: 0 3px 20px red, 0 0 30px red,
+            0 0 20px orange,
+            0 0 5px yellow,
+            -2px -5px 5px yellow,
+            3px -10px 10px yellow,
+            -4px -15px 20px yellow;
+    }
+
+    50% {
+        text-shadow: 0 3px 20px red, 0 0 20px red,
+            0 -5px 10px orange,
+            -2px -5px 5px yellow,
+            3px -10px 10px yellow,
+            -4px -15px 20px yellow,
+            2px -20px 30px rgba(255, 255, 0, 0.5);
+    }
+
+    75% {
+        text-shadow: 0 3px 20px red, 0 0 20px red,
+            0 -5px 10px orange,
+            3px -5px 5px yellow,
+            -4px -10px 10px yellow,
+            2px -20px 30px rgba(255, 255, 0, 0.5),
+            0px -25px 40px rgba(255, 255, 0, 0)
+    }
+
+    100% {
+        text-shadow: 0 3px 20px red, 0 0 20px red,
+            0 0 10px orange,
+            0 0 0 yellow,
+            0 0 5px yellow,
+            -2px -5px 5px yellow,
+            4px -10px 10px yellow;
+    }
+}
+
+.Presentacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+    padding-top: 40px;
     font-size: x-large;
-    padding-top: 5%;
-    width: 100%;
-    height: 20%;
-    font-weight: bold;
+    font-family: 'Akronim';
+}
+
+.soyHenry{
+    float:right;
+    padding: 20px;
+    border-radius: 20px;
     
 }
-.texto{
-    font-size: x-large;
-    font-family: Copperplate, Papyrus, fantasy;
-    font-weight: bold;
-}
-.WelcomeText{
-    font-family: Copperplate, Papyrus, fantasy;
-    font-size: x-large;
-    color: black;
-    font-weight: bold;
-}
+    
+
 .btn{
     display: flex;
-    justify-content:center;
-    
+    justify-content: center;
+    padding: 20px;
 }
+    
 
 .btnInicial{
-  font-family: 'Lucida Handwriting',sans-serif;
-  padding: 18px 30px;
-  font-size: 16px;
-  border: none;
-  position: relative;
-  cursor: pointer;
+  appearance: none;
+  background-color:yellow;
+  border-radius: 20px;
+  border-style: none;
+  box-shadow: #ff4800 0 -12px 6px inset;
   box-sizing: border-box;
-  overflow: hidden;
-  background:rgb(147, 179, 60);
-  border-radius: 10px;
-  min-width: 200px;
-  color: #fff;
-  z-index:0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
-  transition: 0.3s;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  /* font-family: -apple-system,sans-serif; */
+  font-family: 'Akronim';
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
-.btnInicial::before {
-    content:"";
-    position: absolute;
-    display: block;
-    top: 0;
-    left: -50px;
-    width: 70%;
-    height: 100%;
-    background:
-    linear-gradient(90deg, transparent,#ffffff71, transparent);
-    transition: all 1s;
-    z-index: -1;
-    transform: translate(-120px) skew(-20deg);
-}
-    
-
-.btnInicial:hover::before{
-    transform: translate(300px) skew(-20deg);
-}
-
 .btnInicial:hover{
-    background: #2c4105;
+  background-color: #FFC229;
+  box-shadow: #FF6314 0 -6px 8px inset;
+  transform: scale(1.125);
 }
-
+.btnInicial:active{
+    transform: scale(1.025);
+}
+@media (min-width: 768px) {
+    .btnInicial {
+      font-size: 1.8rem;
+      padding: .75rem 2rem;
+    }
+  }
 
     

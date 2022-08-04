@@ -1,25 +1,21 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { getRecipes } from "../../actions";
 import Recipe from "../Recipe/Recipe";
-import { SearchBar } from "../SearchBar/SearchBar";
 import  Paginated  from "../Paginated/Paginated"
-import { FilteredByDiets } from "../FiltersbyDiet/FilterbyDiets.jsx";
-import {OrderAlphabeticFunction} from "../AlphabeticalOrder/OrderAlphabetic";
-import {OrderByScore} from "../OrderScore/OrderByScore";
 import  Loading  from "../Loading/Loading.jsx"
-import Error404 from "../Error/Error404";
-import ApiOrdDb from "../FilteredByDbOrApi/ApiOrDb.jsx"
+// import Error404 from "../Error/Error404";
 import "./Home.css"
+import NavBar from "../NavBar/NavBar";
+import Presentation from "../Presentation/Presentation";
 
 
 export default function MyHome(){
     
     const dispatch = useDispatch();
     let theRecipes = useSelector((state)=> state.recipes);
-    //console.log(theRecipes)
+    
 
     let [paginated, setPaginated] = useState(1);
     let [recipesPerPage] = useState(9);
@@ -27,6 +23,13 @@ export default function MyHome(){
     const lastRecipeLocation = paginated * recipesPerPage;
     const firstRecipeLocation = lastRecipeLocation - recipesPerPage;
     const recipesPages = theRecipes.slice(firstRecipeLocation, lastRecipeLocation);
+
+    const nextPage = function (){
+        setPaginated(paginated+1)
+    }
+    const previousPage = function (){
+        setPaginated(paginated-1)
+    }
 
     const thePaging = (pageNumber)=>{
         setPaginated(pageNumber);
@@ -41,48 +44,29 @@ export default function MyHome(){
 
     return (
         <div className="principalDiv">
-            <nav className="navOfWorks">
-                <div className="SearchBar">
-                    <SearchBar />
-                </div>
-            </nav>
-            <div >
-                <Link to="/myRecipe">
-                    <button className="createBtn"> Create your recipe </button>
-                </Link>
-            </div>
-            <div className="ORDER">
-                <OrderAlphabeticFunction/>
-            </div>
-                <div className="FilteredByDiets">
-                    <FilteredByDiets />
-                </div>
-            <div className="Score">
-                <OrderByScore/>
-            </div>
-            <div className="ApiOdb">
-                <ApiOrdDb/>
-            </div>
+
+            <NavBar />
+            <Presentation />
+            <Paginated
+                theRecipes={theRecipes.length}
+                paginated={paginated}
+                recipesPerPage={recipesPerPage}
+                thePaging={thePaging}
+                nextPage={nextPage}
+                previousPage={previousPage}
+            />
             <div className="CardsRecipes">
-                { !theRecipes.length ? <Error404/> : null}
-                {theRecipes.length ? recipesPages?.map(element => { // the recipes es el estado global de donde saco la info
-                    return <Recipe 
-                    name={element.name} 
-                    key={element.id}
-                    image={element.image} 
-                    dietTypes={element.dietTypes} 
-                    id={element.id}
+                {theRecipes.length ? recipesPages?.map(element => {
+                    return <Recipe
+                        name={element.name}
+                        key={element.id}
+                        image={element.image}
+                        dietTypes={element.dietTypes}
+                        id={element.id}
+                        healthScore={element.healthScore}
                     />
-                }) : <Loading/>}
+                }) : <Loading />}
             </div>
-                <div className="Paginated">
-                <Paginated
-                    theRecipes={theRecipes.length}
-                    paginated= {paginated}
-                    recipesPerPage={recipesPerPage}
-                    thePaging={thePaging}
-                />
-                </div>
         </div>
     );
 };

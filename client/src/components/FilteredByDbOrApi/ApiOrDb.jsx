@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { filterDbApi } from "../../actions";
+import "./DbOrApi.css"
 
 
 export const ApiOrdDb = () =>{
@@ -15,7 +16,7 @@ export const ApiOrdDb = () =>{
     
 
     return(
-        <div>
+        <div className="orderOrigin">
             <select className="typesRecipes" onChange={e => onFilterChange(e)}>
                 <option value="all"> All recipes </option>
                 <option value="api"> Api recipes </option>

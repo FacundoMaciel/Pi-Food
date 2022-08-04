@@ -108,7 +108,6 @@ export function clearDetails(){
 };
 
 export function filterDbApi(payload){
-console.log(payload)
     return{
         type: FILTER_DB_API,
         payload,

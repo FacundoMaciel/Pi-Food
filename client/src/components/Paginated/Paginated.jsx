@@ -1,26 +1,30 @@
 import React from "react";
 import "./Paginated.css"
 
-export default function Paginated({theRecipes, recipesPerPage, thePaging}){
+export default function Paginated({theRecipes, recipesPerPage, thePaging, nextPage, previousPage}){
     
     const thePagings = [];
-    //console.log(thePagings)
-    //console.log(recipesPerpage);
+
     for (let i = 1; i <= Math.ceil(theRecipes/recipesPerPage) ; i++) {
         thePagings.push(i)
     };
-    //console.log(thePagings)
+    
     const handleClick = (number)=>{
         thePaging(number)
     }
-    return(
-        
-        <ul className="itemsPages">
+    return (
+
+        <div className="itemsPages">
             {thePagings && thePagings.map(number => (
-                <span className="pages" key={number}>
-                    <button className="btnPage" onClick={() => handleClick(number)}>{number}</button> </span>
-            ))}
-        </ul>
+                <button className="btnPage" onClick={() => handleClick(number)}>{number}</button>
+                ))}
+            
+            <button className="arrowPage" onClick={()=>previousPage()}> ⇜ </button>
+            <button className="arrowPage" onClick={()=>nextPage()}> ⇝ </button>
+            
+        </div>
+
+
     );
 };
                     

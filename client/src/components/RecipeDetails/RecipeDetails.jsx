@@ -33,43 +33,50 @@ class RecipeDetails extends Component{
    
     render(){
         
-        return(
+        return (
             <div className="GeneralDiv">
-                <Link to="/home">
-                    <button className="btnBackToHome"> Back To Home </button>
-                </Link>
-               {this.props.recipeDetails.name?
-                <div className="RecipeDetails">
-                    Details of the recipes:
-                    
-                    <h1>Name of recipe: </h1>
-                    <h2>{this.props.recipeDetails.name} </h2>
-                    <img src={this.props.recipeDetails.image} alt="Error" />
-                    <h2>Dish types:</h2>
-                    {this.props.recipeDetails.dishType?.map(el => {
-                        return (
-                            <li>{el}</li>)
-                    })}
-                    <h2>Diet types:</h2>
-                    {this.props.recipeDetails.dietTypes?.map(el=> <li>{el.name ? el.name : el}</li>)}
-
-                    <h2>Summary:</h2>
-                    {<p>{this.props.recipeDetails?.summary?.replace(/<[^>]*>/g, '')}</p>}
-                    <h2>Health score:{this.props.recipeDetails.healthScore}</h2>
-                    <div>
-                    <h2>Recipe steps:</h2>
-                    {
-                            typeof this.props.recipeDetails.steps !== "string" ?
-                                 this.props.recipeDetails.steps?.map(el => {
-                                    return (
-                                        <li> {el.step} </li>
-                                    )
-                                }) : <li> {this.props.recipeDetails.steps} </li>
-                    }
-                    </div>
-                    
+                <div>
+                    <Link to="/home">
+                        <img className="backImg"
+                            src="https://th.bing.com/th/id/R.de6a5e67889cb18f8de737772f84d494?rik=LV3mbFZOVDUhCw&pid=ImgRaw&r=0"
+                            alt=""
+                        />
+                    </Link>
                 </div>
-                   : <Loading/>}
+                {this.props.recipeDetails.name ?
+                    <div className="RecipeDetails">
+
+                        <h1>DETAILS: </h1>
+                        <h1> {this.props.recipeDetails.name} </h1>
+                        <h2>Health score: 💖 {this.props.recipeDetails.healthScore}</h2>
+                        <img src={this.props.recipeDetails.image} alt="Error" />
+
+                        <h2>Dish types 🍲:</h2>
+                        {this.props.recipeDetails.dishType?.map(el => {
+                            return (
+                                <h5><li>{el}</li></h5>)
+                        })}
+
+
+                        <h2>Diet types 🥗:</h2>
+                        {this.props.recipeDetails.dietTypes?.map(el => <h5><li>{el.name ? el.name : el}</li></h5>)}
+
+                        <h2>Summary 👨‍🍳:</h2>
+                        {<h5>{this.props.recipeDetails?.summary?.replace(/<[^>]*>/g, '')}</h5>}
+
+                        <h2>Recipe steps 🥣:</h2>
+                        {
+                            typeof this.props.recipeDetails.steps !== "string" ?
+                                this.props.recipeDetails.steps?.map(el => {
+                                    return (
+                                        <h5> {el.step} </h5>
+                                    )
+                                }) : <h5> {this.props.recipeDetails.steps} </h5>
+                        }
+
+
+                    </div>
+                    : <Loading />}
             </div>
         )
     };
@@ -78,16 +85,16 @@ class RecipeDetails extends Component{
 
 function mapStateToProps(state) {
     return {
-        recipeDetails : state.recipeDetails
+        recipeDetails: state.recipeDetails
     };
 
-  }
-  
-  function mapDispatchToProps(dispatch) {
+}
+
+function mapDispatchToProps(dispatch) {
     return {
         getRecipeById: id => dispatch(getRecipeById(id)),
         clearDetails: () => dispatch(clearDetails()),
     };
-  };
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(RecipeDetails);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeDetails);

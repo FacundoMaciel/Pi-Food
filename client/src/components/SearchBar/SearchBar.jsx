@@ -40,13 +40,20 @@ export function SearchBar () {
         <div className="SearchBar">
                 <div>
                 <button className="reload" onClick={e => handleClick(e)}>
-                    Reload Recipes
+                    <img 
+                    src="https://th.bing.com/th/id/R.e08b0f6b925888e929dffe8d2c2c5357?rik=%2foEldeE3oOuM0Q&pid=ImgRaw&r=0" 
+                    alt="" 
+                    width="50"
+                    height="40"
+                    />
+                    <span> Reload Recipes
+                    </span>
                 </button>
                </div>
             <form className="form_cotainerBar" onSubmit={e => onSubmit(e)}>
                 <input className="recipeInput"
                 type="text" 
-                placeholder="Search recipe..."
+                placeholder="🔍 What are you looking for...?"
                 value={input}
                 onChange={ e => onChange(e)}
                 />

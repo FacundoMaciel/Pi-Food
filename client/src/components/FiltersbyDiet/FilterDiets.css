@@ -1,27 +1,14 @@
 .OrderDiets {
-    background: #f4f4f4;
-    background: rgba(244, 244, 244, .79);
-    border: 1px solid #d3d3d3;
-    width: 120px;
-    box-shadow: 0 4px 9px rgba(0, 0, 0, .37);
-    -moz-box-shadow: 0 4px 9px rgba(0, 0, 0, .37);
-    -webkit-box-shadow: 0 4px 9px rgba(0, 0, 0, .37);
+    background: darkgray;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px
+    padding: 5px;
 }
 .types {
-    background: transparent;
-    border: none;
-    font: 16px/16px 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    margin-right: 5px;
-    padding: 8px;
-    width: 120px;
+    background: darkgray;
     box-shadow: 0 0 4px rgba(0, 0, 0, .4) inset, 1px 1px 1px rgba(255, 255, 255, .75);
-    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .4) inset, 1px 1px 1px rgba(255, 255, 255, .75);
-    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .4) inset, 1px 1px 1px rgba(255, 255, 255, .75);
-    border-radius: 9px;
-    -moz-border-radius: 9px;
-    -webkit-border-radius: 9px
-    
+    font-size: large;
+    border-radius: 10px;
+    cursor: pointer;
 }
+

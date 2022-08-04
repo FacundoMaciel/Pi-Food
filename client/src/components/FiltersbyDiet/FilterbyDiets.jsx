@@ -1,20 +1,25 @@
-import React  from "react";
-import { useDispatch } from "react-redux";
-import { theFilterByDiet} from "../../actions";
+import React, { useEffect }  from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { theFilterByDiet, getDiet} from "../../actions";
 import "./FilterDiets.css"
 
 export function FilteredByDiets () {
     const dispatch = useDispatch();
-
+    const tipeDiet = useSelector(state => state.typeOfDiet)
     const onFilterChange = (e) => {
         e.preventDefault();
         dispatch(theFilterByDiet(e.target.value));
+        dispatch(getDiet(e.target.value));
     };
-
+    useEffect(()=>{
+        dispatch(getDiet())
+    },[dispatch]);
+    
     return (
         <div className="OrderDiets">
             <select className="types" onChange={e => onFilterChange(e)}>
-                <option value="all">All Diets</option>
+            {tipeDiet?.map(el=><option value={el}>Diet {el}</option>)}
+                {/* <option value="all">All Diets</option>
                 <option value="gluten free">Gluten Free</option>
                 <option value="ketogenic">Ketogenic</option>
                 <option value="vegetarian">Vegetarian</option>
@@ -27,7 +32,7 @@ export function FilteredByDiets () {
                 <option value="fodmap friendly">Low Fodmap</option>
                 <option value="whole 30">Whole 30</option>
                 <option value="dairy free">Dairy Free</option>
-                <option value="lacto ovo vegetarian">Lacto Ovo egetarian</option>
+                <option value="lacto ovo vegetarian">Lacto Ovo egetarian</option> */}
             </select>
         </div>
     )
