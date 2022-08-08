@@ -11,9 +11,9 @@ export default function NavBar() {
 
     return (
         <div className="nav__bar">
-            <div className="SearchBar">
+            
                 <SearchBar />
-            </div>
+            
                 <img 
                     src="https://cdn3.iconfinder.com/data/icons/food-3-11/128/food_Chef-Cap-Hat-Cooking-Cook-Toque-128.png" 
                     alt="" 
@@ -22,7 +22,7 @@ export default function NavBar() {
                     />
             <div className="buttonsOrders">
                 </div>
-                <h2>Find your style of food❕ ➛ </h2>
+                <h2>Find your style of food ❕ ➛ </h2>
                 <div className="ORDER">
                     <OrderAlphabeticFunction />
                 </div>

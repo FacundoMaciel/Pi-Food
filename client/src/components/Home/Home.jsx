@@ -25,10 +25,10 @@ export default function MyHome(){
     const recipesPages = theRecipes.slice(firstRecipeLocation, lastRecipeLocation);
 
     const nextPage = function (){
-        setPaginated(paginated+1)
+         setPaginated(paginated+1)
     }
     const previousPage = function (){
-        setPaginated(paginated-1)
+         setPaginated(paginated-1)
     }
 
     const thePaging = (pageNumber)=>{
@@ -66,7 +66,6 @@ export default function MyHome(){
                         healthScore={element.healthScore}
                     />
                 }) : <Loading />}
-            <h1>Thank you for your visit to my app<span>Returns soon</span></h1>
             </div>
         </div>
     );

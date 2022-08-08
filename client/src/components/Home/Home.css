@@ -6,7 +6,11 @@
 .Paginated:focus{
      box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
-
+.btnPages{
+  display: flex;
+  padding-left: 525px;
+  padding-top: 30px;
+}
 
 .principalDiv{
    background: url("https://images7.alphacoders.com/373/373253.jpg");
@@ -19,53 +23,7 @@
    padding-top: 2px;
    padding-left: 5px;
 }
-.principalDiv h1{
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: rgb(0, 0, 0);
-  font: bold;
-  opacity: 0;
-  animation: animate 4s ease forwards;
-  font-weight: 500;
-  padding: 10px;
-  width: 20rem;
-  right: 20%;
-  transform: translate(50px);
-  opacity: 0;
-  animation: animate2 7s ease 7s forwards;
-}
-.principalDiv h1 span{
-  background-color: transparent;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  padding: 0.3rem 0.5rem;
-  display: inline-block;
-  transform: translateX(50px);
-  opacity: 0;
-  animation: animate2 7s ease 7s forwards;
-  border-radius: 10px;
-}
-@keyframes grow{
-  10%{
-      transform: scale(0.1);
-      opacity: 1;
-  }
-  100%{
-      transform: scale(1);
-      opacity: 1;
-  }
 
-}
-
-@keyframes animate{
-  100%{
-      opacity: 1;
-  }
-}
-@keyframes animate2{
-  100%{
-      transform: translateX(0);
-      opacity: 1;
-  }
-}
 .CardsRecipes{
     display: flex;
     padding-top: 30px;
@@ -73,8 +31,18 @@
     flex-wrap:wrap; 
     padding: 40px;
 }
-@media (max-width:475px){
-  
+@media (max-width: 900px){
+  .CardsRecipes{
+    width: 500px;
+  }
+  .principalDiv{
+    width: 900px;
+  }
+}
+@media (max-height: 600px){
+  .CardsRecipes{
+    width: 400px;
+  }
 }
   
     

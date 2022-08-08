@@ -38,6 +38,16 @@ export function SearchBar () {
 
     return(
         <div className="SearchBar">
+            <form className="form_cotainerBar" onSubmit={e => onSubmit(e)}>
+                <input className="recipeInput"
+                type="text" 
+                placeholder="🔍 What are you looking for...?"
+                value={input}
+                onChange={ e => onChange(e)}
+                />
+                <button className="Searcher" type="submit"> Search </button>
+                
+            </form>
                 <div>
                 <button className="reload" onClick={e => handleClick(e)}>
                     <img 
@@ -50,16 +60,6 @@ export function SearchBar () {
                     </span>
                 </button>
                </div>
-            <form className="form_cotainerBar" onSubmit={e => onSubmit(e)}>
-                <input className="recipeInput"
-                type="text" 
-                placeholder="🔍 What are you looking for...?"
-                value={input}
-                onChange={ e => onChange(e)}
-                />
-                <button className="Searcher" type="submit"> Search </button>
-                
-            </form>
         </div>
     )
 };

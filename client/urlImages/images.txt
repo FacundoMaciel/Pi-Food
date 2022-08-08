@@ -13,17 +13,24 @@ fondo create recipe = https://th.bing.com/th/id/R.fbdee433ecd8f33664b821cf850843
 fondo detail recipe = https://th.bing.com/th/id/R.1ae8b48c62ce77f2d2696f3723b8e8f5?rik=YwjZr5yy2m7D9Q&riu=http%3a%2f%2fst.depositphotos.com%2f1494134%2f3131%2fv%2f950%2fdepositphotos_31314591-Cooking-background-food-ingredients-and-paper.jpg&ehk=uOWXDSxWPD2kpbgcObjruGSuuVVBo5NQuwEgxclFD%2bo%3d&risl=&pid=ImgRaw&r=0
 logo henry : https://assets.soyhenry.com/logoOG.png
 detalle cocinero: https://th.bing.com/th/id/R.b0f5206c752d2a3fb0429030ed351372?rik=Z2iajcOdjqS2HA&riu=http%3a%2f%2fwww.canalgif.net%2fGifs-animados%2fProfesiones%2fCocineros%2fImagen-animada-Cocinero-54.gif&ehk=KKHNl2wTRBF8ic8fbv3eTCceyXsmqtWbnXOkMxoAZ%2fM%3d&risl=&pid=ImgRaw&r=0
+detalle healthy: https://pbs.twimg.com/profile_images/1932167208/logo.png
 icono para loader: https://www.bing.com/th/id/OGC.6eca3b60bd1ebf4aea155986cf463976?pid=1.7&rurl=https%3a%2f%2facegif.com%2fwp-content%2fgifs%2fapple-48.gif&ehk=TCrEy68TDszAqCTwvVubMtvi2cWwTMsijUtA5liyk0o%3d
+
 emojis: →  ⇒  ⟹  ⇨  ⇾  ➾  ⇢  ☛  ☞  ➔  ➜  ➙  ➛  ➝  ➞  🔍 ❕
+
 ✩·͙*̩̩͙˚̩̥̩̥( ͡ᵔ ͜ʖ ͡ᵔ )*̩̩͙✩·͙˚̩̥̩̥.
 
 👈	
+🍏 🍎
 💖
 👨‍🍳
 🥣
 🍲
+✶
 ⇜ ⇝
-
+🍥
+👨‍🍳
+👩‍🍳
 
 
 

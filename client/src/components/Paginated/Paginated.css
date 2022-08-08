@@ -1,9 +1,10 @@
 .itemsPages{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-self: center;
     text-align: center;
     margin-top: 20px;
+    margin-left: 140px;
 }
 
 .btnPage{
@@ -12,7 +13,7 @@
     align-items: center;
     padding: 10px 25px;
     margin-top: 2px;
-    font-size: 20px;
+    font-size: 14px;
     border: none;
     border-color: black;
     cursor: pointer;
@@ -28,8 +29,9 @@
     color: rgb(0, 0, 0);
     z-index:0;
     letter-spacing: 3px;
-    font-weight: 100px;
+    font-weight: 50px;
     transition: 0.8s;
+    text-shadow: 4px 4px 4px black;
 }
 .btnPage:focus{
     background-color: transparent;
@@ -42,7 +44,7 @@
     background-color: transparent;
     border: none;
     margin-top: 2px;
-    margin-left: 40px;
+    margin-left: 30px;
     cursor: pointer;
     height: 60px;
     width: 100px;
@@ -50,5 +52,14 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    
+}
+@media (max-width: 800px){
+    .itemsPages{
+      width: 66%;
+      height: 55px;
+      margin: 30px;
+    }
+    .arrowPage{
+        font-size: 35px;
+    }
 }

@@ -4,27 +4,28 @@ import "./Recipe.css"
 
 
 
-export default function Recipe({ image, name, dietTypes,id ,healthScore }) {
-
-    // let dietsKey = 1
-    
+export default function Recipe({ image, name,id ,healthScore }) {
+ 
     return (
         <div className="recipeCard">
-            <h2>{name}</h2>
             <img className="img" src={image} alt="Not found" />
+            <div className="name">
+            <h2>{name}</h2>
+            </div>
+
             <Link to={`/home/${id}`} key={id}>
                 <button className="btnDetails"> More info </button>
             </Link>
-            {/* <h3>Diet types of this recipe:</h3>
-            {dietTypes?.map(el => <h4 className="diets" key={dietsKey++}>{el.name ? el.name : el}</h4>)} */}
-            <h3>Health score</h3>
+            <div className="score">
             <img 
-            src="https://th.bing.com/th/id/R.f66006a1a5ac9b59633d419d595737fd?rik=T%2b%2bAJIVAgJ8hMw&pid=ImgRaw&r=0" 
+            src="https://pbs.twimg.com/profile_images/1932167208/logo.png" 
             alt="" 
-            height="70"
-            width="90"
+            height="50"
+            width="70"
             />
-            <h2>{healthScore}</h2>
+            <h1>{healthScore}</h1>
+
+            </div>
         </div>
 
     );

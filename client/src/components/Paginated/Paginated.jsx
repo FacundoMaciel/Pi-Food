@@ -1,7 +1,7 @@
 import React from "react";
 import "./Paginated.css"
 
-export default function Paginated({theRecipes, recipesPerPage, thePaging, nextPage, previousPage}){
+export default function Paginated({theRecipes, recipesPerPage, thePaging,paginated, nextPage, previousPage}){
     
     const thePagings = [];
 
@@ -13,20 +13,22 @@ export default function Paginated({theRecipes, recipesPerPage, thePaging, nextPa
         thePaging(number)
     }
     return (
-
+        
         <div className="itemsPages">
+            <button className="arrowPage"disabled={paginated === 1} onClick={()=>previousPage()}> ↩ </button>
             {thePagings && thePagings.map(number => (
                 <button className="btnPage" onClick={() => handleClick(number)}>{number}</button>
                 ))}
             
-            <button className="arrowPage" onClick={()=>previousPage()}> ⇜ </button>
-            <button className="arrowPage" onClick={()=>nextPage()}> ⇝ </button>
-            
+            <button className="arrowPage"disabled={paginated >= Math.ceil(theRecipes / recipesPerPage)} onClick={()=>nextPage()}> ↪ </button>
         </div>
-
 
     );
 };
+
+
+            
+            
                     
 
 

@@ -11,9 +11,9 @@ function validate(input) {
         errors.name = "Complete with a recipe name";
     } else if (!patron.test(input.name)) { errors.name = "The name cannot contain numbers" }
 
-    if (input.healthScore < 1 || input.healthScore > 100) {
-        errors.healthScore = "Complete field width values 1 to 100 please"
-    } else if ((!/^([0-9]|[1-9][0-9]|100)$/.test(input.healthScore))) { errors.healthScore = "Just numbers" }
+    // if (input.healthScore < 1 || input.healthScore > 100) {
+    //     errors.healthScore = "Complete field width values 1 to 100 please"
+    // } else if ((!/^([0-9]|[1-9][0-9]|100)$/.test(input.healthScore))) { errors.healthScore = "Just numbers" }
     
     return errors;
 };
@@ -105,7 +105,7 @@ export default function AddRecipe() {
                     />
                 </Link>
         <div className="formDiv">
-        <h1> <span>Create your recipe</span> Lets GO! </h1>
+        <h1> <span>Create your recipe</span> Let's GO! </h1>
         <form onSubmit={e => handleSubmit(e)}>
             <div className="divInputs">
             <div className="input">
@@ -113,7 +113,7 @@ export default function AddRecipe() {
                 <input className="Name"
                     type="text"
                     name="name"
-                    placeholder="name"
+                    placeholder="Name"
                     onChange={e => handleOnChange(e)}
                     value={input.name} 
                     />
@@ -131,11 +131,14 @@ export default function AddRecipe() {
             <div className="input">
             <label> Health Score </label>
             <input
-                type="text"
+                type="range"
+                min="1"
+                max="100"
                 name="healthScore"
-                placeholder="healthScore"
+                placeholder="HealthScore"
                 onChange={e => handleOnChange(e)}
-                value={input.healthScore} />
+                value={input.healthScore}/>
+                
             {errors.healthScore && (<p>{errors.healthScore}</p>)}
             </div>
             <div className="input">
@@ -163,8 +166,8 @@ export default function AddRecipe() {
             <div className="inputDiets">
                 {typeOfDiet?.map(el => {
                     return (
-                        <div>
-                            <label>{el}</label>
+                        <div> 
+                            <label>Diet {el}</label>
                             
                             <input type="checkbox" className="boxType" 
                             onChange={e => handleCheckBox(e)} 
