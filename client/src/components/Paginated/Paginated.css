@@ -11,7 +11,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px 25px;
+    padding: 1px 25px;
     margin-top: 2px;
     font-size: 14px;
     border: none;
@@ -31,7 +31,7 @@
     letter-spacing: 3px;
     font-weight: 50px;
     transition: 0.8s;
-    text-shadow: 4px 4px 4px black;
+    text-shadow: 4px 4px 4px rgb(45, 42, 42);
 }
 .btnPage:focus{
     background-color: transparent;
