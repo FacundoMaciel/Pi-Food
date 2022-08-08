@@ -46,25 +46,25 @@ class RecipeDetails extends Component{
                 {this.props.recipeDetails.name ?
                     <div className="RecipeDetails">
 
-                        <h1>DETAILS: </h1>
-                        <h1> {this.props.recipeDetails.name} </h1>
-                        <h2>Health score: 💖 {this.props.recipeDetails.healthScore}</h2>
+                        <h2>DETAILS: </h2>
+                        <h3> {this.props.recipeDetails.name} </h3>
+                        <h4>Health score: 💖 {this.props.recipeDetails.healthScore}</h4>
                         <img src={this.props.recipeDetails.image} alt="Error" />
 
-                        <h2>Dish types 🍲:</h2>
+                        <h4>Dish types 🍲:</h4>
                         {this.props.recipeDetails.dishType?.map(el => {
                             return (
                                 <h5><li>{el}</li></h5>)
                         })}
 
 
-                        <h2>Diet types 🥗:</h2>
+                        <h4>Diet types 🥗:</h4>
                         {this.props.recipeDetails.dietTypes?.map(el => <h5><li>{el.name ? el.name : el}</li></h5>)}
 
-                        <h2>Summary 👨‍🍳:</h2>
+                        <h4>Summary 👨‍🍳:</h4>
                         {<h5>{this.props.recipeDetails?.summary?.replace(/<[^>]*>/g, '')}</h5>}
 
-                        <h2>Recipe steps 🥣:</h2>
+                        <h4>Recipe steps 🥣:</h4>
                         {
                             typeof this.props.recipeDetails.steps !== "string" ?
                                 this.props.recipeDetails.steps?.map(el => {

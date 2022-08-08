@@ -19,8 +19,8 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: white;           
-  border: 3px solid rgb(255, 196, 0);  
+  background-color: #539a9f;           
+  border: 3px solid white;  
 }
 
 
