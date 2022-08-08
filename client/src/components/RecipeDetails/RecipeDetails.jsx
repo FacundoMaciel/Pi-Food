@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { getRecipeById, clearDetails } from "../../actions";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
-import  Loading  from "../Loading/Loading.jsx"
+import Error404 from "../Error/Error404";
 import "./RecipeDetails.css"
 
 
@@ -45,7 +45,7 @@ class RecipeDetails extends Component{
                 </div>
                 {this.props.recipeDetails.name ?
                     <div className="RecipeDetails">
-
+                    
                         <h2>DETAILS: </h2>
                         <h3> {this.props.recipeDetails.name} </h3>
                         <h4>Health score: 💖 {this.props.recipeDetails.healthScore}</h4>
@@ -73,10 +73,8 @@ class RecipeDetails extends Component{
                                     )
                                 }) : <h5> {this.props.recipeDetails.steps} </h5>
                         }
-
-
                     </div>
-                    : <Loading />}
+                    : <Error404/>}
             </div>
         )
     };

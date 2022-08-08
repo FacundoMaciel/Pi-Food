@@ -5,7 +5,6 @@ import { getRecipes } from "../../actions";
 import Recipe from "../Recipe/Recipe";
 import  Paginated  from "../Paginated/Paginated"
 import  Loading  from "../Loading/Loading.jsx"
-// import Error404 from "../Error/Error404";
 import "./Home.css"
 import NavBar from "../NavBar/NavBar";
 import Presentation from "../Presentation/Presentation";

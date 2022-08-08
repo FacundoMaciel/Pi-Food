@@ -134,3 +134,10 @@
   background: #539a9f;
   opacity:.9;
 }
+
+@media (max-width:500px){
+  .form_cotainerBar{
+    width: 320px;
+    margin-left: -100px;
+  }
+}

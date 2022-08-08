@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../Landing/LandingPage.css"
 
-export const LandingPage= () => {
+export default function LandingPage() {
     return (
         <div className="Landing">
             <div className="Welcome">
