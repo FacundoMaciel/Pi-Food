@@ -13,7 +13,7 @@ export function OrderAlphabeticFunction(){
   return (
     <div className="orderASC">
       <select className="Select" onChange = {onHandleChange} >
-        <option value="all">✶Alphabetic </option>
+        <option value="all">🍴Alphabetic </option>
         <option value="asc"> A-Z </option>
         <option value="desc"> Z-A </option>
       </select>

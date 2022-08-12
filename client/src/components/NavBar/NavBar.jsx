@@ -11,18 +11,18 @@ export default function NavBar() {
 
     return (
         <div className="nav__bar">
+                <img 
+                    src="https://th.bing.com/th/id/R.01c058845cf508a27fa30c15db746f35?rik=KkfVCypQPQsj6A&riu=http%3a%2f%2ffs5.directupload.net%2fimages%2f161218%2fwv5c67ra.png&ehk=azowtn1e%2biXboLPeu4vsNa2Jj7geuZPePBFEBK9dA%2f4%3d&risl=&pid=ImgRaw&r=0" 
+                    alt="" 
+                    width="90"
+                    height="80"
+                    />
             
                 <SearchBar />
             
-                <img 
-                    src="https://cdn3.iconfinder.com/data/icons/food-3-11/128/food_Chef-Cap-Hat-Cooking-Cook-Toque-128.png" 
-                    alt="" 
-                    width="70"
-                    height="60"
-                    />
             <div className="buttonsOrders">
                 </div>
-                <h2>Find your style of food ❕ ➛ </h2>
+                <h2>Find your favorite dish ❕ ➛ </h2>
                 <div className="ORDER">
                     <OrderAlphabeticFunction />
                 </div>

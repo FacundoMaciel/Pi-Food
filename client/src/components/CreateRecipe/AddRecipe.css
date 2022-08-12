@@ -3,32 +3,31 @@
 
 
 .CreateDiv {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
     background: url("https://th.bing.com/th/id/R.0a9e74d24901a420403fe10fb66fd97c?rik=sqRwwFlXjBrO7Q&pid=ImgRaw&r=0");
-    background-repeat: cover;
     background-attachment: fixed;
     background-size: cover;
-    display: flex;
-    margin-bottom: -21px;
+    position: absolute;
+    width: 100%;
 }
-
 .CreateDiv h1 {
     font-family: Merienda;
     color: aliceblue;
     font: bold;
-    opacity: 0;
     animation: animate 4s ease forwards;
-    font-weight: 500;
+    font-weight: 600;
     padding: 30px;
-    width: 20rem;
-    right: 20%;
-    margin-left: 350px;
+    width: 30rem;
     transform: translate(50px);
     opacity: 0;
     animation: animate2 1.5s ease 1.5s forwards;
 }
-
-.CreateDiv h1 span {
-    background-color: transparent;
+.CreateDiv span {
+    background-color:rgb(255, 196, 0);
     font-family: Merienda;
     padding: 0.3rem 0.5rem;
     display: inline-block;
@@ -36,8 +35,8 @@
     opacity: 0;
     animation: animate2 1.5s ease 1.5s forwards;
     border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
-
 @keyframes grow {
     10% {
         transform: scale(0.1);
@@ -50,13 +49,11 @@
     }
 
 }
-
 @keyframes animate {
     100% {
         opacity: 1;
     }
 }
-
 @keyframes animate2 {
     100% {
         transform: translateX(0);
@@ -67,17 +64,18 @@
 .divInputs {
     display: flex;
     flex-direction: column;
+    align-self: center;
+    justify-content: center;
     background-color: transparent;
     font-family: Merienda;
     color: white;
-    margin: 3rem;
-    margin-left: 280px;
     padding: 30px;
     text-align: center;
-    border-radius: 1rem;
+    border-radius: 4px;
     background-size: 25rem;
     width: 500px;
-    box-shadow: 0 4px 20px rgb(255, 196, 0);
+    margin-bottom: 10px;
+    box-shadow: rgb(255, 196, 0) 0px -12px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(255, 196, 0, 0.772) 0px -20px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .input {
@@ -90,9 +88,9 @@
 }
 
 .input input {
-    background-color: rgba(224, 240, 240, 0.605);
+    background-color: rgba(240, 224, 224, 0.81);
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(255, 196, 0);
     border-radius: 0px;
     width: 100%;
     box-sizing: border-box;
@@ -104,11 +102,12 @@
 .inputDiets {
     display: flex;
     flex-direction: column;
-    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 20px;
     padding: 0, 8rem 1rem;
-    max-width: auto;
+    /* max-width: auto; */
     font-size: 15px;
 }
 
@@ -119,23 +118,23 @@
     border-color: aliceblue;
     border-top-color: transparent;
     border-left-color: transparent;
-    border-radius: 0;
+    border-radius: 50px;
 }
 
 .boxType {
-    width: 20px;
+    width: 40px;
     height: 20px;
     transition: all 0.375s;
     cursor: pointer;
 }
 
 .inputImage {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .submit {
     padding-bottom: 30px;
-    margin-left: 250px;
+    
 }
 
 .submit button {
@@ -143,7 +142,7 @@
     border: none;
     outline: none;
     color: rgb(255, 255, 255);
-    background: #111;
+    background: rgb(0, 0, 0);
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -201,7 +200,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgb(75, 71, 71);
+    background: rgb(0, 0, 0);
     left: 0;
     top: 0;
     border-radius: 10px;
@@ -215,9 +214,7 @@
     border-radius: 20px;
     animation: float 4s linear infinite;
 }
-.cocinerito{
-    margin-left: 220px;
-}
+
 @keyframes float {
 
     0%,
@@ -232,22 +229,13 @@
     }
 }
 
-@media (max-width: 900px) {
-    .CreateDiv {
-        width: 190%;
+@media (max-width: 800px){
+    .CreateDiv{
+        width: 200%;
     }
-    .CreateDiv h1 {
-        margin-left: 90px;
-    }
-    .divInputs{
-        width: 40%;
-        margin-left: 120px;
-    }
-    .cocinerito{
-        margin-left: -25px;
-    }
-    .submit{
-        margin-left: -30px;
+    .divInputs {
+    width: 90%;
     }
 }
+
 

@@ -105,7 +105,7 @@ export default function AddRecipe() {
                     />
                 </Link>
         <div className="formDiv">
-        <h1> <span>Create your recipe</span> Let's GO! </h1>
+        <h1> <span>Create your recipe</span> Let's Go! </h1>
         <form onSubmit={e => handleSubmit(e)}>
             <div className="divInputs">
             <div className="input">
@@ -129,13 +129,12 @@ export default function AddRecipe() {
                 value={input.summary} />
             </div>
             <div className="input">
-            <label> Health Score </label>
+            <label>Health score: {input.healthScore} </label>
             <input
                 type="range"
                 min="1"
                 max="100"
                 name="healthScore"
-                placeholder="HealthScore"
                 onChange={e => handleOnChange(e)}
                 value={input.healthScore}/>
                 
@@ -185,7 +184,7 @@ export default function AddRecipe() {
                         src="https://th.bing.com/th/id/R.b0f5206c752d2a3fb0429030ed351372?rik=Z2iajcOdjqS2HA&riu=http%3a%2f%2fwww.canalgif.net%2fGifs-animados%2fProfesiones%2fCocineros%2fImagen-animada-Cocinero-54.gif&ehk=KKHNl2wTRBF8ic8fbv3eTCceyXsmqtWbnXOkMxoAZ%2fM%3d&risl=&pid=ImgRaw&r=0" 
                         alt="" 
                         width="70"
-                        height="50"
+                        height="60"
                         />
             <div className ="submit">
             <button type="submit">Finished Creating</button>

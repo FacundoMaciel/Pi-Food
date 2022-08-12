@@ -15,7 +15,7 @@ export function OrderByScore() {
     return (
         <div className="HealthScore">
             <select className="ORDER_H_SCORE" onChange={handleOrderScore}>
-                <option value="null">✶Order by Score </option>
+                <option value="null">🍴Order by Score </option>
                 <option value="desc"> BEST SCORES </option>
                 <option value="asc"> WORST SCORES </option>
             </select>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { getRecipeById, clearDetails } from "../../actions";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
-import Error404 from "../Error/Error404";
+import  Loading  from "../Loading/Loading.jsx"
 import "./RecipeDetails.css"
 
 
@@ -35,7 +35,7 @@ class RecipeDetails extends Component{
         
         return (
             <div className="GeneralDiv">
-                <div>
+                <div >
                     <Link to="/home">
                         <img className="backImg"
                             src="https://th.bing.com/th/id/R.de6a5e67889cb18f8de737772f84d494?rik=LV3mbFZOVDUhCw&pid=ImgRaw&r=0"
@@ -74,7 +74,7 @@ class RecipeDetails extends Component{
                                 }) : <h5> {this.props.recipeDetails.steps} </h5>
                         }
                     </div>
-                    : <Error404/>}
+                    : <Loading/>}
             </div>
         )
     };

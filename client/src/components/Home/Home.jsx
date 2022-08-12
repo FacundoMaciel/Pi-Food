@@ -43,9 +43,17 @@ export default function MyHome(){
 
     return (
         <div className="principalDiv">
+            <nav className="nav">
+                <div className="navBar">
+                    <NavBar />
+                </div>
+                <div className="presentation">
+                    <Presentation />
+                </div>
+            
 
-            <NavBar />
-            <Presentation />
+            </nav>
+            <div className="Paginated">
             <Paginated
                 theRecipes={theRecipes.length}
                 paginated={paginated}
@@ -53,7 +61,10 @@ export default function MyHome(){
                 thePaging={thePaging}
                 nextPage={nextPage}
                 previousPage={previousPage}
-            />
+                />
+
+            </div>
+           
             <div className="CardsRecipes">
                 {theRecipes.length ? recipesPages?.map(element => {
                     return <Recipe

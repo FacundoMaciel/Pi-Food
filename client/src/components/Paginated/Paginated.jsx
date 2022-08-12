@@ -13,7 +13,6 @@ export default function Paginated({theRecipes, recipesPerPage, thePaging,paginat
         thePaging(number)
     }
     return (
-        
         <div className="itemsPages">
             <button className="arrowPage"disabled={paginated === 1} onClick={()=>previousPage()}> ↩ </button>
             {thePagings && thePagings.map(number => (
@@ -22,7 +21,6 @@ export default function Paginated({theRecipes, recipesPerPage, thePaging,paginat
             
             <button className="arrowPage"disabled={paginated >= Math.ceil(theRecipes / recipesPerPage)} onClick={()=>nextPage()}> ↪ </button>
         </div>
-
     );
 };
 

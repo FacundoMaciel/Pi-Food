@@ -12,6 +12,7 @@
     height: 490px;
     object-fit: contain;
     margin: 40px;
+    border-radius: 4px;
 }
 .recipeCard:hover{
   border-radius: 2%;
@@ -30,7 +31,7 @@
 
 .img{
     padding: 15px;
-    height: 260px;
+    height: 270px;
     width: 100%;
     align-self: center;
 }
@@ -44,7 +45,8 @@
 }
 .btnDetails{
   align-self: center;
-  background-color: rgb(123, 117, 117);
+  width: 100%;
+  background-color: rgba(167, 1, 1, 0.849);
   background-image: none;
   background-position: 0 90%;
   background-repeat: repeat no-repeat;
@@ -61,7 +63,6 @@
   line-height: 23px;
   outline: none;
   padding: .50rem;
-  margin: 2px;
   text-decoration: none;
   transition: all 235ms ease-in-out;
   border-bottom-left-radius: 15px 255px;
@@ -74,7 +75,7 @@
 }
 
 .btnDetails:hover {
-  background-color: #539a9f;
+  background-color: transparent;
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }

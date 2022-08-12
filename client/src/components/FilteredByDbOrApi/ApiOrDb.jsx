@@ -18,7 +18,7 @@ export const ApiOrdDb = () =>{
     return(
         <div className="orderOrigin">
             <select className="typesRecipes" onChange={e => onFilterChange(e)}>
-                <option value="all"> ✶All recipes </option>
+                <option value="all"> 🍴All recipes </option>
                 <option value="api"> All recipes </option>
                 <option value="dataBase"> My recipes created </option>
             </select>
