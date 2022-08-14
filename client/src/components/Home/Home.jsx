@@ -12,6 +12,7 @@ import Presentation from "../Presentation/Presentation";
 
 export default function MyHome(){
     
+    let key = 1;
     const dispatch = useDispatch();
     let theRecipes = useSelector((state)=> state.recipes);
     
@@ -69,7 +70,7 @@ export default function MyHome(){
                 {theRecipes.length ? recipesPages?.map(element => {
                     return <Recipe
                         name={element.name}
-                        key={element.id}
+                        key={key++}
                         image={element.image}
                         dietTypes={element.dietTypes}
                         id={element.id}

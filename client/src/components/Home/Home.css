@@ -30,7 +30,7 @@
 .Paginated{
   display: flex;
   align-self: center;
-  margin-left: 405px;
+  margin-left: 428px;
 }
 .Paginated:focus{
      box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
@@ -58,6 +58,7 @@
   }
   .Paginated{
     margin-left: 170px;
+    margin-bottom: 80px;
   }
 
 }

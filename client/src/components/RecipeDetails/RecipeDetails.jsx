@@ -2,37 +2,41 @@ import React, { Component } from "react";
 import { getRecipeById, clearDetails } from "../../actions";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
-import  Loading  from "../Loading/Loading.jsx"
+import  Loading  from "../Loading/Loading.jsx";
+import Swal from "sweetalert2"
 import "./RecipeDetails.css"
 
+let key = 1
+const theAlert = () => {
+    Swal.fire({
+        title: 'Error!',
+        text: 'Do you want to continue?',
+        icon: 'error',
+        html: '<a href="http://localhost:3000/home">To home?</a> ',
+        confirmButtonAriaLabel: 'Thumbs up'
+    })
+}
+class RecipeDetails extends Component {
 
-class RecipeDetails extends Component{
-    
-    
-    componentDidMount(){
-       
+
+    componentDidMount() {
+
         const id = this.props.match.params.id;
-        
+
         this.props.getRecipeById(id);
-        console.log(id)
+
+        if( id.toString().length !== 36 && id.toString().length !== 6 && id.toString().length !== 7) theAlert()
     };
-    /*
-    imagen(image)-> SI
-    nombre(name)-> SI
-    tipo de plato(dishTypes)-> SI
-    tipos de dietas(dietTypes)-> SI
-    resumen del plato(summary)-> SI
-    nivel de comida saludable(healthScore)-> SI
-    paso a paso(steps-step)-> SI
-    */
-   componentWillUnmount(){
 
-    this.props.clearDetails()
+    componentWillUnmount() {
 
-   }
-   
-    render(){
-        
+        this.props.clearDetails()
+
+    };
+    
+
+    render() {
+
         return (
             <div className="GeneralDiv">
                 <div >
@@ -43,9 +47,10 @@ class RecipeDetails extends Component{
                         />
                     </Link>
                 </div>
+
                 {this.props.recipeDetails.name ?
                     <div className="RecipeDetails">
-                    
+
                         <h2>DETAILS: </h2>
                         <h3> {this.props.recipeDetails.name} </h3>
                         <h4>Health score: 💖 {this.props.recipeDetails.healthScore}</h4>
@@ -59,7 +64,7 @@ class RecipeDetails extends Component{
 
 
                         <h4>Diet types 🥗:</h4>
-                        {this.props.recipeDetails.dietTypes?.map(el => <h5><li>{el.name ? el.name : el}</li></h5>)}
+                        {this.props.recipeDetails.dietTypes?.map(el => <h5 key={key++}><li >{el.name ? el.name : el}</li></h5>)}
 
                         <h4>Summary 👨‍🍳:</h4>
                         {<h5>{this.props.recipeDetails?.summary?.replace(/<[^>]*>/g, '')}</h5>}

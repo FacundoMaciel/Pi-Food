@@ -15,20 +15,21 @@ export default function LandingPage() {
             </div>
             <div className="Welcome">
                 <img
-                    src="https://th.bing.com/th/id/R.71fb7032d586b8abd5447dc6f9c2f287?rik=RxEdXx1gW%2bY3Yg&pid=ImgRaw&r=0"
+                    src="https://thecookbook.pk/wp-content/uploads/2021/12/The-Cook-Book-logo-1.png"
                     alt=""
-                    width="300"
-                    height="105"
+                    width="330"
+                    height="150"
                 />
             </div>
             <div className="slogan">
-                <h2> Hello  I invite you to look for a recipe </h2>
-                <h2> that you like or ¡create your own!, click to </h2>
+                <h2> Welcome </h2>
+                <h2> Don't know what to cook today? </h2>
+                <h2>🢛 Recipes here 🢛</h2>
             </div>
             <div className="cocinero">
                 <Link to={'/home'}>
                     <img
-                        src="https://cdn2.iconfinder.com/data/icons/food-ink/512/chef-512.png"
+                        src="https://moradadelchef.com/wp-content/uploads/2019/07/MC_ICON_CHEF_ROJO.png"
                         alt=""
                         width="100"
                         height="90"

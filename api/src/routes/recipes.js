@@ -13,7 +13,7 @@ const router = Router();
 //console.log('MI API KEY',API_KEY)
 
 const myApiData = async function () {
-    const myApi = await axios.get(`https://api.spoonacular.com//recipes/complexSearch?apiKey=${API_KEY11}&addRecipeInformation=true&number=100`)
+    const myApi = await axios.get(`https://api.spoonacular.com//recipes/complexSearch?apiKey=${API_KEY8}&addRecipeInformation=true&number=100`)
     .then(r => r.data.results)
     let resultsApi = myApi?.map(res => {
       return {
@@ -110,6 +110,20 @@ router.get("/:id", async (req, res) => {
     console.log(e)
   }
 });
+
+router.delete("/:id", async(req,res,next)=>{
+  try{
+      let {id} = req.params;
+      await Recipe.destroy({
+          where:{
+              id:id
+          }
+      }) 
+      res.send("Deleted")
+  }catch(e){
+      next(e)
+  }
+})
 
 
 module.exports = router;

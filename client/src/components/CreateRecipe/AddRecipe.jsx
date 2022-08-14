@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addRecipe, getDiet, getRecipes } from "../../actions"
+import Swal from "sweetalert2"
 import "./AddRecipe.css"
 
 function validate(input) {
@@ -17,9 +18,6 @@ function validate(input) {
     
     return errors;
 };
-
-
-
 
 export default function AddRecipe() {
 
@@ -41,6 +39,44 @@ export default function AddRecipe() {
         dietTypes: [],
         image: "",
     });
+    
+    const theAlert = () => {
+        Swal.fire({
+            title: 'Error',
+            text:'The recipe already exists!',
+            icon:'error',
+            color: '#716add',
+            background: '#fff url(/images/trees.png)',
+          })
+    }
+    const sweetCreate = ()=>{
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'If you did not compete all the fields your recipe will not be created correctly!',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, create it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Created!',
+                'Your recipe has been created.!',
+                'success'
+              )
+            }
+            else if (
+                result.dismiss === Swal.DismissReason.cancel
+              ) {
+                Swal.fire(
+                  'Cancelled',
+                  'Cancelled recipe',
+                  'error'
+                )
+              }
+          })
+    }
 
     const handleOnChange = (e) => {
         setInput({
@@ -56,12 +92,10 @@ export default function AddRecipe() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const existsRecipe = recipes.filter(rec => rec.name.toLowerCase() === input.name.toLowerCase())
-        if (existsRecipe.length) {
-            return alert("Recipe already exists")
-        };
-
+        if (existsRecipe.length) theAlert();
+        if (!existsRecipe.length) sweetCreate();
+        
         dispatch(addRecipe(input));
-        alert("You recipe has been created congrats ✩·͙*̩̩͙˚̩̥̩̥( ͡ᵔ ͜ʖ ͡ᵔ )*̩̩͙✩·͙˚̩̥̩̥.")
         setInput({
             name: "",
             summary: "",
@@ -74,12 +108,12 @@ export default function AddRecipe() {
         });
     };
         
+        
     
     function handleCheckBox(e){
         let newArray = input.dietTypes
         let find = newArray.indexOf(e.target.value)
-        console.log(find)
-        console.log(newArray)
+
         if(find >= 0){
             newArray.splice(find, 1)
         } else {

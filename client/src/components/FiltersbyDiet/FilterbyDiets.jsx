@@ -4,6 +4,7 @@ import { theFilterByDiet, getDiet} from "../../actions";
 import "./FilterDiets.css"
 
 export function FilteredByDiets () {
+    let key = 100
     const dispatch = useDispatch();
     const tipeDiet = useSelector(state => state.typeOfDiet)
     const onFilterChange = (e) => {
@@ -18,7 +19,7 @@ export function FilteredByDiets () {
     return (
         <div className="OrderDiets">
             <select className="types" onChange={e => onFilterChange(e)}>
-            {tipeDiet?.map(el=><option value={el}>🍴Diet {el}</option>)}
+            {tipeDiet?.map(el=><option value={el} key={key++}>🍴Diet {el}</option>)}
                 {/* <option value="all">All Diets</option>
                 <option value="gluten free">Gluten Free</option>
                 <option value="ketogenic">Ketogenic</option>

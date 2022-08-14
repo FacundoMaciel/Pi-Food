@@ -2,6 +2,7 @@ import React from "react";
 import { getRecipeByName, getRecipes } from "../../actions";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import Swal from "sweetalert2"
 import "./SearchBar.css"
 
 
@@ -10,12 +11,25 @@ export function SearchBar () {
     
     const dispatch = useDispatch();
 
+    const theAlert = () => {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Incorrect search',
+            icon: 'error',
+            imageUrl: 'https://i.ytimg.com/vi/l4FH6NoMkE4/maxresdefault.jpg',
+            imageWidth: 400,
+            imageHeight: 200,
+            confirmButtonText: 'OK'
+
+        })
+    }
+
     const onSubmit = (e) => {
         e.preventDefault();
         
-        if(input === "") alert("Complete the field please")
+        if(input === "") theAlert()
        
-        if(Number(input)) alert("No numbers in this field")
+        if(Number(input)) theAlert()
         
         dispatch(getRecipeByName(input))
         
@@ -26,8 +40,6 @@ export function SearchBar () {
 
     const onChange = (e)=>{
         setInput(e.target.value)
-        
-        
     };
 
     function handleClick(e){
