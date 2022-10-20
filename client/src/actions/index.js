@@ -14,45 +14,44 @@ export const UPDATE_RECIPE = "UPDATE_RECIPE"
 export const DELETE_RECIPE = "UPDATE_RECIPE"
 
 
+
 export const getRecipes = ()=> {
-    return function(dispatch){
-        return fetch('/api/recipes')
-        .then(res => res.json())
-        .then(json => {
-            dispatch({
+    return async function(dispatch){
+        try{let response = await axios.get('/api/recipes')
+        return dispatch({
                 type: GET_RECIPES,
-                payload: json
-            });
-        })
-        .catch((e)=>{console.error(e)})
+                payload: response.data
+            })}
+        catch(e){
+            console.log(e)
+           }
     };
 };
 
 export const getRecipeByName = (name)=> {
-    return function(dispatch){
-        return fetch(`/api/recipes?name=${name}`) 
-        .then(res => res.json()) 
-        .then(json => {
-            dispatch({
+    return async function(dispatch){
+       try{ let response = await axios.get(`/api/recipes?name=${name}`) 
+        return dispatch({
                 type: GET_RECIPE_BY_NAME,
-                payload: json
-            });
-        })
-        .catch((e)=>{console.error(e)})
+                payload: response.data
+            })}
+            catch(e){
+                console.log(e)
+            }
     };
 };
 
 export const getRecipeById = (id) => {
-    return function (dispatch) {
-        return fetch(`/api/recipes/${id}`)
-        .then(res => res.json())
-        .then(json => {
-            dispatch({
+    return async function (dispatch) {
+        try{let response = await axios.get(`/api/recipes/${id}`)
+        
+         return dispatch({
                 type: GET_RECIPE_BY_ID,
-                payload: json[0]
-            });
-        })
-        .catch((e)=>{console.error(e)})
+                payload: response.data[0]
+            })}
+            catch(e){
+                console.log(e)
+            }
     };
 };
 
