@@ -16,7 +16,7 @@ export const DELETE_RECIPE = "UPDATE_RECIPE"
 
 export const getRecipes = ()=> {
     return function(dispatch){
-        return fetch('http://localhost:3001/api/recipes')
+        return fetch('/api/recipes')
         .then(res => res.json())
         .then(json => {
             dispatch({
@@ -30,7 +30,7 @@ export const getRecipes = ()=> {
 
 export const getRecipeByName = (name)=> {
     return function(dispatch){
-        return fetch(`http://localhost:3001/api/recipes?name=${name}`) 
+        return fetch(`/api/recipes?name=${name}`) 
         .then(res => res.json()) 
         .then(json => {
             dispatch({
@@ -44,7 +44,7 @@ export const getRecipeByName = (name)=> {
 
 export const getRecipeById = (id) => {
     return function (dispatch) {
-        return fetch(`http://localhost:3001/api/recipes/${id}`)
+        return fetch(`/api/recipes/${id}`)
         .then(res => res.json())
         .then(json => {
             dispatch({
@@ -58,7 +58,7 @@ export const getRecipeById = (id) => {
 
 export const getDiet = () => {
     return async function(dispatch){
-       try{let response = await axios.get('http://localhost:3001/api/diets')
+       try{let response = await axios.get('/api/diets')
        console.log(response);
        return dispatch({
         type: GET_DIET,
@@ -95,7 +95,7 @@ export const OrderHealthScore = (healthScore) => {
 export function addRecipe (payload) {
     return async function (){
         try {
-            let response = await axios.post("http://localhost:3001/api/myRecipe", payload)
+            let response = await axios.post("/api/myRecipe", payload)
             return response
             
         } catch (error) {
@@ -107,7 +107,7 @@ export function addRecipe (payload) {
 export function updateRecipe (id, payload) {
     return async () => {
       try {
-        await axios.put(`http://localhost:3001/api/myRecipe/${id}`, payload);
+        await axios.put(`/api/myRecipe/${id}`, payload);
       } catch (e) {
         console.error(e);
       }
@@ -117,7 +117,7 @@ export function updateRecipe (id, payload) {
   export function deleteRecipe (id)  {
     return async () => {
       try {
-        await axios.delete(`http://localhost:3001/api/myRecipe/${id}`);
+        await axios.delete(`/api/myRecipe/${id}`);
       } catch (e) {
         console.error(e);
       }
