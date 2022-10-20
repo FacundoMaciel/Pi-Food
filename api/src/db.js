@@ -1,3 +1,4 @@
+import * as pg from 'pg';
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
