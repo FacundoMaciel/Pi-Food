@@ -12,7 +12,6 @@ const theAlert = () => {
         title: 'Error!',
         text: 'Do you want to continue?',
         icon: 'error',
-        html: '<a href="http://localhost:3000/home">To home?</a> ',
         confirmButtonAriaLabel: 'Thumbs up'
     })
 }
