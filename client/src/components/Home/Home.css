@@ -45,29 +45,33 @@
     padding: 40px;
 }
 
-@media screen and (max-width: 1360px) {
+@media screen and (max-width: 400px) {
   .principalDiv {
     display: contents;
-    width: 100% ; 
+    width: 150% ; 
   }
   .nav{
-    width: 100%;
+    width: 493px;
+    justify-content: center;
+    align-items: center;
   }
   .CardsRecipes{
     display: contents;
   }
   .Paginated{
-    margin-left: 170px;
+    display: flex;
+    margin-left: 140px;
+    padding-right: 2px;
     margin-bottom: 80px;
   }
 
 }
-
+/* 
 @media screen and (max-width: 880px) {
-  .principalDiv {
-    gap: 0px;
+  .Paginated{
+    margin-bottom: 50px;
   }
-}
+} */
 
 
 

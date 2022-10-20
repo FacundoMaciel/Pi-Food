@@ -32,7 +32,7 @@
     text-shadow: 4px 4px 4px rgb(161, 157, 157);
 }
 .slogan:hover{
-  font-size: 15px;
+  font-size: 12px;
   background-color: rgba(42, 0, 42, 0.349);
   border-radius: 20px;
 }

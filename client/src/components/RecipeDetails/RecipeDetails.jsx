@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getRecipeById, clearDetails } from "../../actions";
+import { getRecipeById, clearDetails, deleteRecipe } from "../../actions";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import  Loading  from "../Loading/Loading.jsx";
@@ -16,6 +16,25 @@ const theAlert = () => {
         confirmButtonAriaLabel: 'Thumbs up'
     })
 }
+const theAlert2 = () => {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deleted!',
+            'Your recipe has been deleted.',
+            'success',
+          )
+        }
+      })
+}
 class RecipeDetails extends Component {
 
 
@@ -26,7 +45,14 @@ class RecipeDetails extends Component {
         this.props.getRecipeById(id);
 
         if( id.toString().length !== 36 && id.toString().length !== 6 && id.toString().length !== 7) theAlert()
+
+        
     };
+
+    handleClick = () => {
+        this.props.deleteRecipe(this.props.recipeDetails.id)
+        theAlert2()
+    }
 
     componentWillUnmount() {
 
@@ -34,7 +60,6 @@ class RecipeDetails extends Component {
 
     };
     
-
     render() {
 
         return (
@@ -47,7 +72,14 @@ class RecipeDetails extends Component {
                         />
                     </Link>
                 </div>
-
+                <div className="Delete">
+                {this.props.recipeDetails?.createdInDb? 
+                <Link to="/home">
+                <button onClick={() => this.handleClick()}>Delete recipe?</button> 
+                 </Link>
+                : null 
+                }
+                </div>
                 {this.props.recipeDetails.name ?
                     <div className="RecipeDetails">
 
@@ -80,6 +112,7 @@ class RecipeDetails extends Component {
                         }
                     </div>
                     : <Loading/>}
+                    
             </div>
         )
     };
@@ -97,6 +130,7 @@ function mapDispatchToProps(dispatch) {
     return {
         getRecipeById: id => dispatch(getRecipeById(id)),
         clearDetails: () => dispatch(clearDetails()),
+        deleteRecipe: id => dispatch(deleteRecipe(id))
     };
 };
 

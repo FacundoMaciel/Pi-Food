@@ -24,7 +24,7 @@ export default function Recipe({ image, name,id ,healthScore }) {
             width="70"
             />
             <h1>{healthScore}</h1>
-
+            
             </div>
         </div>
 

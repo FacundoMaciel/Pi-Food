@@ -76,13 +76,16 @@
     }
 }
 
-@media (max-width: 800px){
+
+@media screen and (max-width: 800px) {
   .homeShow{
     width: 200%;
-    margin-left: 8px;
   }
-  .createBtn{
-      width: 100px;
-      height: 100px;
+  .homeShow h2 {
+      display: none;
   }
+  .createBtn {
+    width: 100px;
+    height: 100px;
+}
 }

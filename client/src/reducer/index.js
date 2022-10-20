@@ -9,7 +9,9 @@ import {
     ORDER_HEALTH_SCORE,
     ADD_RECIPE,
     CLEAR_DETAILS,
-    FILTER_DB_API
+    FILTER_DB_API,
+    DELETE_RECIPE,
+    UPDATE_RECIPE
 
 } from "../actions/index"
 
@@ -108,6 +110,14 @@ export default function reducer(state = initialState, action) {
         case ADD_RECIPE:
             return {
                 ...state,
+            }
+        case DELETE_RECIPE:
+            return {
+                ...state,
+            }
+        case UPDATE_RECIPE:
+            return {
+                ...state
             }
         case CLEAR_DETAILS:
             return {

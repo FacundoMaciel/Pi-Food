@@ -28,6 +28,40 @@ router.post("/", async (req, res, next) => {
     }
 });
 
+router.delete("/:id", async (req, res, next) => {
+    try {
+        let { id } = req.params;
+        await Recipe.destroy({
+            where: {
+                id: id
+            }
+        })
+        res.send("Deleted")
+    } catch (e) {
+        next(e)
+    }
+});
+
+router.put("/:id", async (req, res) => {
+    try {
+        let { id } = req.params;
+        let { name, summary, steps, score, healthScore, image } = req.body
+        const response = await Recipe.update(
+            {
+                name: name,
+                summary: summary,
+                steps: steps,
+                score: score,
+                healthScore: healthScore,
+                image: image
+            },
+            { where: { id: id } }
+        )
+        res.send(`${response} done`)
+    } catch (e) {
+        res.send(e)
+    }
+});
 
 
 

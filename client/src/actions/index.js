@@ -10,6 +10,9 @@ export const ORDER_HEALTH_SCORE = "ORDER_HEALTH_SCORE"
 export const ADD_RECIPE = "ADD_RECIPE"
 export const CLEAR_DETAILS = "CLEAR_DETAILS"
 export const FILTER_DB_API = "FILTER_DB_API"
+export const UPDATE_RECIPE = "UPDATE_RECIPE"
+export const DELETE_RECIPE = "UPDATE_RECIPE"
+
 
 export const getRecipes = ()=> {
     return function(dispatch){
@@ -100,6 +103,26 @@ export function addRecipe (payload) {
         }
     }
 };
+
+export function updateRecipe (id, payload) {
+    return async () => {
+      try {
+        await axios.put(`http://localhost:3001/api/myRecipe/${id}`, payload);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+  };
+  
+  export function deleteRecipe (id)  {
+    return async () => {
+      try {
+        await axios.delete(`http://localhost:3001/api/myRecipe/${id}`);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+  };
 
 export function clearDetails(){
     return{

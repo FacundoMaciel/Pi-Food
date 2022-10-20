@@ -49,7 +49,7 @@
     background: rgba(167, 1, 1, 0.849);
     border-radius: 15px;
 }
-@media (max-width: 1800px){
+@media screen and (max-width: 400px){
     .itemsPages{
       width: 100%;
     }

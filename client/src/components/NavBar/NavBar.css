@@ -26,7 +26,16 @@
     padding: 40px;
 }
 
-@media (max-width: 1800px){
+@media screen and (max-width: 800px) {
+    .nav__bar{
+        width: 200%;
+    }
+    .nav__bar h2 {
+        display: none;
+    }
+}
+
+/* @media (max-width: 1800px){
     .nav__bar{
         width: 156.3%;
         padding: 24.3px;
@@ -35,4 +44,5 @@
       display: contents;
     }
     
-}
+} */
+
