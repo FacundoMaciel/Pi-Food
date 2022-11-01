@@ -11,7 +11,21 @@ const cors = require('cors');
 
 server.name = 'API';
 
-server.use(cors());
+server.use(
+  cors({
+    origin: "https://pi-food-two.vercel.app", 
+    credentials: true,
+    methods: ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
+    allowedHeaders: [
+      "Origin",
+      "X-Requested-With",
+      "Content-Type",
+      "Accept",
+      "Authorization",
+      "authorization",
+    ],
+  })
+);
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 server.use(bodyParser.json({ limit: '50mb' }));
 server.use(cookieParser());
