@@ -1,5 +1,7 @@
 import React from "react";
 import "./Paginated.css"
+import { TbArrowBigRight } from 'react-icons/tb';
+import { TbArrowBigLeft } from 'react-icons/tb';
 
 export default function Paginated({theRecipes, recipesPerPage, thePaging,paginated, nextPage, previousPage}){
     
@@ -9,17 +11,14 @@ export default function Paginated({theRecipes, recipesPerPage, thePaging,paginat
         thePagings.push(i)
     };
     
-    const handleClick = (number)=>{
-        thePaging(number)
-    }
+    // const handleClick = (number)=>{
+    //     thePaging(number)
+    // }
     return (
         <div className="itemsPages">
-            <button className="arrowPage"disabled={paginated === 1} onClick={()=>previousPage()}> ↩ </button>
-            {thePagings && thePagings.map(number => (
-                <button className="btnPage" key={number} onClick={() => handleClick(number)}>{number}</button>
-                ))}
-            
-            <button className="arrowPage"disabled={paginated >= Math.ceil(theRecipes / recipesPerPage)} onClick={()=>nextPage()}> ↪ </button>
+            <button className="arrowPage"disabled={paginated === 1} onClick={()=>previousPage()}> <TbArrowBigLeft/> </button>
+            <h5>{paginated}</h5>
+            <button className="arrowPage"disabled={paginated === 10} onClick={()=>nextPage()}><TbArrowBigRight/> </button>
         </div>
     );
 };

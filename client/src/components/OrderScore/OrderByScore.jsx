@@ -1,5 +1,5 @@
 import React from "react";
-import {OrderHealthScore} from "../../actions";
+import {OrderHealthScore} from "../../redux/actions/index";
 import { useDispatch } from "react-redux";
 import "./OrderScore.css"
 
@@ -13,11 +13,11 @@ export function OrderByScore() {
     };
 
     return (
-        <div className="HealthScore">
+        <div className="HealthScore">Score <br />
             <select className="ORDER_H_SCORE" onChange={handleOrderScore}>
-                <option value="null">🍴Order by Score </option>
-                <option value="desc"> BEST SCORES </option>
-                <option value="asc"> WORST SCORES </option>
+                <option value="all"> All  </option>
+                <option value="desc"> Best  </option>
+                <option value="asc"> Worst </option>
             </select>
         </div>
     )

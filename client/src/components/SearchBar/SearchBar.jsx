@@ -1,5 +1,5 @@
 import React from "react";
-import { getRecipeByName, getRecipes } from "../../actions";
+import { getRecipeByName } from "../../redux/actions/index";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2"
@@ -42,36 +42,23 @@ export function SearchBar () {
         setInput(e.target.value)
     };
 
-    function handleClick(e){
-        e.preventDefault();
-        dispatch(getRecipes(input))
-        setInput("")
-    }
+    // function handleClick(e){
+    //     e.preventDefault();
+    //     dispatch(getRecipes(input))
+    //     setInput("")
+    // }
 
     return(
         <div className="SearchBar">
             <form className="form_cotainerBar" onSubmit={e => onSubmit(e)}>
-                <input className="recipeInput"
+                <input 
                 type="text" 
-                placeholder="🔍 What are you looking for...?"
+                placeholder="🔍 Search you recipe..."
                 value={input}
                 onChange={ e => onChange(e)}
                 />
-                <button className="Searcher" type="submit"> Search </button>
-                
+                <button type="submit"> Search </button>
             </form>
-                <div>
-                <button className="reload" onClick={e => handleClick(e)}>
-                    <img 
-                    src="https://th.bing.com/th/id/R.e08b0f6b925888e929dffe8d2c2c5357?rik=%2foEldeE3oOuM0Q&pid=ImgRaw&r=0" 
-                    alt="" 
-                    width="50"
-                    height="40"
-                    />
-                    <span> Reload Recipes
-                    </span>
-                </button>
-               </div>
         </div>
     )
 };

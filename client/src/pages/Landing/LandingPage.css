@@ -1,0 +1,188 @@
+@import url(https://fonts.googleapis.com/css?family=Pattaya);
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  background-image: url("../../assets/ByN.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  opacity: .9;
+}
+
+.landing{
+  display: flex;
+  justify-content:flex-end;
+}
+
+.btn {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  padding: 20px;
+  user-select: none;
+}
+.btn h1 {
+  color: rgb(255, 225, 0);
+  font: bold;
+  font-size: 45px;
+  font-family: Pattaya;
+  animation: animate 4s ease forwards;
+  width: 30rem;
+  transform: translate(50px);
+  opacity: 0;
+  animation: animate2 1.5s ease 1.5s forwards;
+  padding: 10px;
+}
+
+.btn span {
+  color: rgb(255, 225, 0);
+  font: bold;
+  font-size: 25px;
+  font-family: Pattaya;
+  animation: animate 4s ease forwards;
+  width: 30rem;
+  transform: translate(50px);
+  opacity: 0;
+  animation: animate2 1.5s ease 1.5s forwards;
+  padding: 10px;
+}
+
+.btn h2 {
+  visibility: hidden;
+  color: rgb(0, 0, 0);
+  font: bold;
+  font-size: 40px;
+  font-family: Pattaya;
+  animation: animate 4s ease forwards;
+  width: 10rem;
+  transform: translate(80px);
+  opacity: 0;
+  animation: animate2 1.5s ease 1.5s forwards;
+  padding: 10px;
+}
+
+.btn h3 {
+  color: white;
+  background-color:rgb(255, 225, 0);
+  text-shadow: 4px 4px 6px rgb(0, 0, 0);
+  font-size: x-large;
+  padding: 0.6rem 1rem;
+  display: inline-block;
+  transform: translateX(50px);
+  opacity: 0;
+  animation: animate2 1.5s ease 1.5s forwards;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+@keyframes grow {
+  10% {
+      transform: scale(0.1);
+      opacity: 1;
+  }
+
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+
+}
+@keyframes animate {
+  100% {
+      opacity: 1;
+  }
+}
+@keyframes animate2 {
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+
+.btn h3 {
+  margin: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: inline-block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px rgb(255, 225, 0);
+  background-image: linear-gradient(45deg, #ffd92f 0%, #b49a0b  51%, #7b4f07  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+.btn h3:hover {
+  background-position: right center;
+  color: rgb(40, 39, 39);
+  text-decoration: none;
+}
+.btn h1:hover {
+  background-position: center;
+  color: white;
+  text-decoration: none;
+}
+.btn span:hover {
+  background-position: center;
+  color: white;
+  text-decoration: none;
+}
+
+.btn h3:active {
+  transform: scale(0.95);
+}
+
+@media screen and (max-width: 900px) {
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn h1{
+      display: none;
+    }
+    .btn span{
+      visibility: hidden;
+    }
+    .btn h2{
+      align-self: center;
+      visibility: visible;
+    }
+    .btn h3{
+      color:black
+    }
+}
+
+/* @media screen and (min-width:1800px) {
+  .btn {
+    display: flex;
+    font-size: xx-large;
+  }
+  .btn h1{
+    font-size: 80px;
+  }
+  .btn span{
+    font-size: 50px;
+  }
+  .btn h3{
+    font-size: 100px;
+  }
+  .landing img{
+    width: 200px;
+    height: 150px;
+  }
+} */

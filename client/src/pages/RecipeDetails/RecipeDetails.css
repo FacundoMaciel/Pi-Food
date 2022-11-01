@@ -1,0 +1,144 @@
+
+.DetailsDiv {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: url("../../assets/destacada.jpg");
+   background-repeat: no-repeat;
+   width: 100%;
+   position: absolute;
+   background-size: cover;
+   color: black;
+   font-size: x-large;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.RecipeDetails {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: center;
+   background: url("https://www.xtrafondos.com/wallpapers/vertical/textura-de-madera-2927.jpg");
+   border-radius: 10px;
+   padding: 20px;
+   margin: 50px;
+   width: 50%;
+   font-size: large;
+}
+
+.RecipeDetails h2 {
+   font-family: Pattaya;
+}
+
+.RecipeDetails h3 {
+   font-family: Pattaya;
+}
+
+.DetailsDiv h5 {
+   color: black;
+   text-decoration: none;
+   background-color: transparent;
+}
+
+.DetailsDiv li {
+   color: black;
+   list-style-type: none;
+   background-color: transparent;
+}
+
+.diets {
+   display: flex;
+   flex-direction: column;
+   align-self: flex-start;
+   margin-top: 50px;
+   align-items: center;
+   padding: 10px;
+   border-radius: 10px;
+   background: url("https://www.xtrafondos.com/wallpapers/vertical/textura-de-madera-2927.jpg");
+   font-size: large;
+}
+
+.diets img {
+   border-radius: 10px;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+   margin-bottom: 25px;
+}
+
+.diets h3 {
+   font-family: Pattaya;
+}
+
+.diets li {
+   text-transform: capitalize;
+}
+
+.Delete button {
+   align-self: flex-start;
+   width: 10%;
+   background-color: transparent;
+   background-image: none;
+   /* background-position: 0 90%; */
+   background-repeat: repeat no-repeat;
+   background-size: 4px 3px;
+   border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+   border-style: solid;
+   border-width: 2px;
+   box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+   box-sizing: border-box;
+   color: rgb(81, 0, 0);
+   cursor: pointer;
+   font-family: Merienda;
+   font-size: 1rem;
+   line-height: 23px;
+   outline: none;
+   padding: .30rem;
+   text-decoration: none;
+   transition: all 235ms ease-in-out;
+   border-bottom-left-radius: 15px 255px;
+   border-bottom-right-radius: 225px 15px;
+   border-top-left-radius: 255px 15px;
+   border-top-right-radius: 15px 225px;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+
+}
+
+.Delete button:hover {
+   background-color: transparent;
+   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+   transform: translate3d(0, 2px, 0);
+}
+
+.Delete button:focus {
+   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+@media screen and (max-width:800px) {
+   .DetailsDiv{
+      width: 140%;
+      flex-direction: column;
+   }
+   .diets {
+      align-self: center;
+   }
+   .RecipeDetails{
+      width: 80%;
+      align-self: center;
+   }
+}
+@media screen and (min-width: 2500px) {
+   .DetailsDiv{
+      height: 100%;
+      justify-content: center;
+   }
+   .diets {
+      align-self: center;
+      font-size: xx-large;
+   }
+   .RecipeDetails{
+      width: auto;
+      align-self: center;
+      font-size: x-large;
+   }
+}
