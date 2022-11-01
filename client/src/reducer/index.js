@@ -16,8 +16,8 @@ import {
 } from "../actions/index"
 
 const initialState = {
-    recipes: [],
-    allRecipes: [],
+    recipes : [],
+    allRecipes : [],
     typeOfDiet: [],
     recipeDetails: {},
 };
@@ -50,11 +50,11 @@ export default function reducer(state = initialState, action) {
         case FILTER_BY_DIET:
             let allRecipesState = state.allRecipes; // [{r},{r1},{r2}]
             let myDiets = action.payload === "all" ? allRecipesState ? allRecipesState : null //si dietas api coincide con "all" = allRecipesState // sino nulo  
-                : allRecipesState.filter(el => el.dietTypes?.some(d => d.name
+                : allRecipesState.filter(el => el.dietTypes?.some(d => d.name 
                     ? d.name === action.payload // pero si se crea es un array de obj.name
                     : d === action.payload)) //  si es de la api es un array de strings
-            // por eso se devuelve un caso .name o un caso del elemento
-            // Tendria array filtrado con la dieta dependiente de AP
+                        // por eso se devuelve un caso .name o un caso del elemento
+                        // Tendria array filtrado con la dieta dependiente de AP
             let vegetarianRecipes = [] // allRecipes vegetarian
             for (let i = 0; i < allRecipesState.length; i++) {
                 if (allRecipesState[i].vegetarian === true) {
@@ -130,10 +130,10 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 recipes: action.payload === "all" ? state.recipes : createdFilter
             }
-        default:
-            return state
-    };
-};
+            default:
+                return state
+            };
+        };
 
 
 
