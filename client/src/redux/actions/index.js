@@ -57,7 +57,7 @@ export const getRecipeById = (id) => {
 
 export const getDiet = () => {
     return async function(dispatch){
-       try{let response = await axios.get('/api/diets')
+       try{let response = await axios.get('/api/_diets')
        console.log(response);
        return dispatch({
         type: GET_DIET,
