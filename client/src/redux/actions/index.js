@@ -15,70 +15,62 @@ export const DELETE_RECIPE = "UPDATE_RECIPE"
 
 
 
-export const getRecipes = () => {
-    return async function (dispatch) {
-        try {
-            let response = await axios.get('http://localhost:3001/api/recipes')
-            return dispatch({
+export const getRecipes = ()=> {
+    return async function(dispatch){
+        try{let response = await axios.get('/api/recipes')
+        return dispatch({
                 type: GET_RECIPES,
                 payload: response.data
-            })
-        }
-        catch (e) {
+            })}
+        catch(e){
             console.log(e)
-        }
+           }
     };
 };
 
-export const getRecipeByName = (name) => {
-    return async function (dispatch) {
-        try {
-            let response = await axios.get(`http://localhost:3001/api/recipes?name=${name}`)
-            return dispatch({
+export const getRecipeByName = (name)=> {
+    return async function(dispatch){
+       try{ let response = await axios.get(`/api/recipes?name=${name}`) 
+        return dispatch({
                 type: GET_RECIPE_BY_NAME,
                 payload: response.data
-            })
-        }
-        catch (e) {
-            console.log(e)
-        }
+            })}
+            catch(e){
+                console.log(e)
+            }
     };
 };
 
 export const getRecipeById = (id) => {
     return async function (dispatch) {
-        try {
-            let response = await axios.get(`http://localhost:3001/api/recipes/${id}`)
-
-            return dispatch({
+        try{let response = await axios.get(`/api/recipes/${id}`)
+        
+         return dispatch({
                 type: GET_RECIPE_BY_ID,
                 payload: response.data[0]
-            })
-        }
-        catch (e) {
-            console.log(e)
-        }
+            })}
+            catch(e){
+                console.log(e)
+            }
     };
 };
 
 export const getDiet = () => {
-    return async function (dispatch) {
-        try {
-            let response = await axios.get('http://localhost:3001/api/diets')
-            console.log(response);
-            return dispatch({
-                type: GET_DIET,
-                payload: response.data.map(el => el.name)
-            })
-        }
-        catch (e) {
-            console.log(e)
-        }
+    return async function(dispatch){
+       try{let response = await axios.get('/api/diets')
+       console.log(response);
+       return dispatch({
+        type: GET_DIET,
+        payload: response.data.map(el=>el.name)
+       })}
+       catch(e){
+        console.log(e)
+       }
     };
 };
 
 export const theFilterByDiet = (payload) => {
-    return {
+    return{
         type: FILTER_BY_DIET,
         payload: payload
     };
@@ -99,50 +91,51 @@ export const OrderHealthScore = (healthScore) => {
     };
 };
 
-export function addRecipe(payload) {
-    return async function () {
+export function addRecipe (payload) {
+    return async function (){
         try {
-            let response = await axios.post("http://localhost:3001/api/myRecipe", payload)
+            let response = await axios.post("/api/myRecipe", payload)
             return response
-
+            
         } catch (error) {
             console.log(error)
         }
     }
 };
 
-export function updateRecipe(id, payload) {
+export function updateRecipe (id, payload) {
     return async () => {
-        try {
-            await axios.put(`http://localhost:3001/api/myRecipe/${id}`, payload);
-        } catch (e) {
-            console.error(e);
-        }
+      try {
+        await axios.put(`/api/myRecipe/${id}`, payload);
+      } catch (e) {
+        console.error(e);
+      }
     };
-};
-
-export function deleteRecipe(id) {
+  };
+  
+  export function deleteRecipe (id)  {
     return async () => {
-        try {
-            await axios.delete(`http://localhost:3001/api/myRecipe/${id}`);
-        } catch (e) {
-            console.error(e);
-        }
+      try {
+        await axios.delete(`/api/myRecipe/${id}`);
+      } catch (e) {
+        console.error(e);
+      }
     };
-};
+  };
 
-export function clearDetails() {
-    return {
+export function clearDetails(){
+    return{
         type: CLEAR_DETAILS
     }
 };
 
-export function filterDbApi(payload) {
-    return {
+export function filterDbApi(payload){
+    return{
         type: FILTER_DB_API,
         payload,
     }
 }
+        
 
 
 
