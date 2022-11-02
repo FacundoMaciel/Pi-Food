@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Pattaya);
 
 .navigation {
-    height: 70px;
+    height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -27,7 +27,7 @@
     display: inline-block;
     text-decoration: none;
     color: rgb(255, 225, 0);
-    font-size: 1rem;
+    font-size: large;
     margin-left: 3rem;
 }
 

@@ -13,7 +13,10 @@ function SideBar() {
 
   
 	return (
-    <div className="sideBar"> <a href="/home"><BiReset size={30}/></a>
+    <div className="sideBar"> 
+    <a href="/home">
+      <BiReset size={30}/>
+    </a>
     <FcFilledFilter size={30}/>
       <div> 
         <OrderAlphabeticFunction />

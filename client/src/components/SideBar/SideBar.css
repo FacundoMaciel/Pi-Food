@@ -15,6 +15,7 @@
 .sideBar a{
     color: rgb(255, 225, 0);
     text-decoration: none;
+    margin-top: 1rem;
 }
 .sideBar a:hover{
     color: white;
