@@ -5,6 +5,7 @@ import { FilteredByDiets } from "../FiltersbyDiet/FilterbyDiets";
 import { OrderByScore } from "../OrderScore/OrderByScore";
 import { FcFilledFilter } from 'react-icons/fc';
 import { SiCodechef } from 'react-icons/si';
+import { BiReset } from 'react-icons/bi';
 import "./SideBar.css"
 
 function SideBar() {
@@ -12,8 +13,8 @@ function SideBar() {
 
   
 	return (
-    <div className="sideBar"> <a href="/home">Reset Filters</a>
-    <FcFilledFilter/>
+    <div className="sideBar"> <a href="/home"><BiReset size={30}/></a>
+    <FcFilledFilter size={30}/>
       <div> 
         <OrderAlphabeticFunction />
       </div>

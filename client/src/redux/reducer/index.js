@@ -13,7 +13,7 @@ import {
     DELETE_RECIPE,
     UPDATE_RECIPE
 
-} from "../actions/index"
+} from "../../redux/actions/index"
 
 const initialState = {
     recipes : [],

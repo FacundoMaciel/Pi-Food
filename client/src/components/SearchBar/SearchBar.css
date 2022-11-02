@@ -8,9 +8,9 @@
 	top: 2%;
   width:355px;
   color: rgb(255, 225, 0);
-  box-shadow:0 4px 9px rgb(255, 225, 0);
+  /* box-shadow:0 4px 9px rgb(255, 225, 0);
   -moz-box-shadow:0 4px 9px rgb(184, 162, 2);
-  -webkit-box-shadow:0 4px 9px rgb(114, 101, 0);
+  -webkit-box-shadow:0 4px 9px rgb(114, 101, 0); */
   border-radius: 5px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px
